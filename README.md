@@ -3,7 +3,7 @@
 ## 🏥 Project Overview
 **Live Site:** https://www.atlantamedicalclinic.com/  
 **Clinic:** Atlanta Medical Clinic — Board-certified varicose vein & spider vein specialists  
-**Address:** 4553 N. Shallowford Rd, Suite 200, Atlanta, GA 30338  
+**Address:** 197 14th St NW, Ste 300, Atlanta, GA 30318  
 **Phone:** 404-609-0870  
 **Email:** info@atlantamedicalclinic.com  
 **Hours:** Mon–Fri 8:00am–5:00pm
