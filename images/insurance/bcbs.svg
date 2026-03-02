@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 88" width="340" height="88">
+  <!-- Shield / Blue Cross icon -->
+  <g transform="translate(8, 4)">
+    <!-- Outer shield -->
+    <path d="M36 0 L64 11 L64 40 Q64 64 36 76 Q8 64 8 40 L8 11 Z" fill="#005DAA"/>
+    <!-- Horizontal bar of cross -->
+    <rect x="14" y="28" width="44" height="12" rx="1.5" fill="white"/>
+    <!-- Vertical bar of cross -->
+    <rect x="30" y="12" width="12" height="44" rx="1.5" fill="white"/>
+    <!-- Blue shield bottom accent -->
+    <path d="M8 40 Q8 64 36 76 Q64 64 64 40 L64 44 Q64 66 36 78 Q8 66 8 44 Z" fill="#003F7F" opacity="0.25"/>
+  </g>
+  <!-- BlueCross -->
+  <text x="82" y="30" font-family="'Arial Black', Arial, sans-serif" font-size="20" font-weight="900" fill="#005DAA" letter-spacing="-0.5">BlueCross</text>
+  <!-- BlueShield -->
+  <text x="82" y="54" font-family="'Arial Black', Arial, sans-serif" font-size="20" font-weight="900" fill="#005DAA" letter-spacing="-0.5">BlueShield</text>
+  <!-- Association -->
+  <text x="83" y="70" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#005DAA" letter-spacing="1.2">Association</text>
+</svg>
