@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Am I a Candidate for Vein Treatment? | Free Vein Quiz | Atlanta Medical Clinic</title>
+  <meta name="description" content="Take our free 2-minute vein quiz to find out if you're a candidate for varicose or spider vein treatment. Get your personalized results instantly." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:  #0a1535;
+      --gold:  #b8952a;
+      --gold-light: #fdf8ee;
+      --white: #ffffff;
+      --text:  #222222;
+      --muted: #666666;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--navy);
+      color: rgba(255,255,255,.80);
+      font-size: 0.82rem;
+      padding: 9px 0;
+      text-align: center;
+    }
+    .topbar a { color: var(--gold); font-weight: 600; }
+    .topbar i { margin-right: 5px; color: var(--gold); }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(184,149,42,.25);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo img { height: 50px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,.85);
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color .2s, background .2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--gold); background: rgba(184,149,42,.12); }
+    .nav-links a.active { color: var(--gold); font-weight: 700; }
+    .btn-nav-phone {
+      color: rgba(255,255,255,.9);
+      font-weight: 700;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: color .2s;
+      white-space: nowrap;
+    }
+    .btn-nav-phone:hover { color: var(--gold); }
+    .btn-nav-phone i { color: var(--gold); }
+
+    /* ── HERO ── */
+    .quiz-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a2d55 100%);
+      padding: 64px 24px 48px;
+      text-align: center;
+      color: var(--white);
+    }
+    .quiz-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(184,149,42,.18);
+      border: 1px solid rgba(184,149,42,.4);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+    .quiz-hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .quiz-hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .quiz-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.80);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+    .quiz-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,.65);
+    }
+    .quiz-meta span { display: flex; align-items: center; gap: 6px; }
+    .quiz-meta i { color: var(--gold); }
+
+    /* ── QUIZ CONTAINER ── */
+    .quiz-section {
+      background: var(--white);
+      padding: 0 24px 80px;
+    }
+    .quiz-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 8px 48px rgba(10,21,53,.12);
+      margin-top: -32px;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+    }
+    .quiz-iframe-wrap {
+      width: 100%;
+      min-height: 680px;
+    }
+    .quiz-iframe-wrap iframe {
+      width: 100%;
+      min-height: 680px;
+      border: none;
+      display: block;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--gold-light);
+      border-top: 1px solid rgba(184,149,42,.2);
+      border-bottom: 1px solid rgba(184,149,42,.2);
+      padding: 20px 24px;
+    }
+    .trust-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .trust-item i { color: var(--gold); font-size: 1rem; }
+
+    /* ── CTA BOTTOM ── */
+    .cta-bottom {
+      background: var(--navy);
+      padding: 56px 24px;
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-bottom h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .cta-bottom p {
+      color: rgba(255,255,255,.75);
+      margin-bottom: 28px;
+      font-size: 1rem;
+    }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 8px;
+      transition: background .2s, transform .2s;
+      text-decoration: none;
+    }
+    .btn-gold:hover { background: #9a7a1e; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: #060d1f;
+      color: rgba(255,255,255,.55);
+      text-align: center;
+      font-size: 0.82rem;
+      padding: 20px 24px;
+    }
+    .site-footer a { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .quiz-hero { padding: 48px 20px 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <i class="fas fa-phone"></i> Two locations — NYC &amp; Paramus, NJ &nbsp;|&nbsp;
+    Call us: <a href="tel:8777440446">877.744.0446</a>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="client-stemregen.html" class="logo">
+        <img src="https://www.genspark.ai/api/files/s/fTG3eIAL" alt="Stem Regen Medical" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="client-stemregen.html#about">About</a></li>
+        <li><a href="client-stemregen.html#treatments">Services</a></li>
+        <li><a href="client-stemregen.html#testimonials">Reviews</a></li>
+        <li><a href="quiz.html" class="active">Vein Quiz</a></li>
+        <li><a href="client-stemregen.html#schedule">Contact</a></li>
+      </ul>
+      <a href="tel:8777440446" class="btn-nav-phone">
+        <i class="fas fa-phone"></i> 877.744.0446
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="quiz-hero">
+    <div class="eyebrow"><i class="fas fa-clipboard-check"></i> Free 2-Minute Assessment</div>
+    <h1>Are You a Candidate for<br /><em>Vein Treatment?</em></h1>
+    <p>Answer a few quick questions and find out if your symptoms qualify for minimally invasive treatment — most procedures are covered by insurance.</p>
+    <div class="quiz-meta">
+      <span><i class="fas fa-clock"></i> Takes 2 minutes</span>
+      <span><i class="fas fa-lock"></i> 100% private</span>
+      <span><i class="fas fa-shield-alt"></i> No obligation</span>
+      <span><i class="fas fa-check-circle"></i> Instant results</span>
+    </div>
+  </div>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><i class="fas fa-award"></i> Board-Certified Specialists</div>
+      <div class="trust-item"><i class="fas fa-heart"></i> Most Insurance Accepted</div>
+      <div class="trust-item"><i class="fas fa-map-marker-alt"></i> NYC &amp; Paramus, NJ</div>
+      <div class="trust-item"><i class="fas fa-star"></i> 4.7 ★ Google Rated</div>
+    </div>
+  </div>
+
+  <!-- QUIZ EMBED -->
+  <div class="quiz-section">
+    <div class="quiz-wrap">
+      <div class="quiz-iframe-wrap">
+        <iframe
+          src="https://link.mypracticelaunch.com/widget/survey/EIwPvjkFyeyvxGNaZNMj"
+          style="border:none;width:100%;min-height:680px;"
+          scrolling="no"
+          id="EIwPvjkFyeyvxGNaZNMj"
+          title="Vein Treatment Candidate Quiz">
+        </iframe>
+        <script src="https://link.mypracticelaunch.com/js/form_embed.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BOTTOM -->
+  <div class="cta-bottom">
+    <h2>Ready to Talk to a Specialist?</h2>
+    <p>Our team is available Monday – Thursday. Call or request a free consultation below.</p>
+    <a href="tel:8777440446" class="btn-gold">
+      <i class="fas fa-phone"></i> Call 877.744.0446
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    &copy; 2026 Stem Regen Medical &nbsp;|&nbsp;
+    7 W 45th St Fl 9, New York, NY 10036 &nbsp;&amp;&nbsp; 66 State Route 17, Paramus, NJ 07652 &nbsp;|&nbsp;
+    <a href="client-stemregen.html">Back to Main Site</a>
+  </footer>
+
+</body>
+</html>

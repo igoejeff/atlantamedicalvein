@@ -1,0 +1,2951 @@
+<!--
+╔══════════════════════════════════════════════════════════════════════════════╗
+║         SPARKPAGE BLANK TEMPLATE — CLIENT ONBOARDING FILE                  ║
+║         Original: sparkpage.html (Atlanta Medical Clinic — DO NOT EDIT)    ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║  QUICK START — Replace these placeholders with Ctrl+F / Find & Replace:    ║
+║                                                                              ║
+║  PLACEHOLDER              WHAT IT IS                                        ║
+║  ─────────────────────────────────────────────────────────────────────────  ║
+║  CLINIC_NAME              Full clinic name (e.g. "Chicago Vein Center")     ║
+║  CLINIC_ALTERNATE_NAME    DBA / short name (e.g. "CVC Vein Specialists")    ║
+║  PHONE_DISPLAY            Phone with dots (e.g. "312.555.0100")             ║
+║  PHONE_DIGITS             Digits only (e.g. "3125550100")                   ║
+║  EMAIL_ADDRESS            Clinic email                                       ║
+║  CLIENT_DOMAIN            Primary domain (e.g. "chicagovcein.com")          ║
+║  CLIENT_DOMAIN_ALT        Secondary domain (or repeat primary)               ║
+║  STREET_ADDRESS           Full street (e.g. "123 Michigan Ave, Suite 400")  ║
+║  STREET_ADDRESS_SHORT     Abbreviated (e.g. "123 Michigan Ave, Ste 400")    ║
+║  CITY_NAME                City (e.g. "Chicago")                              ║
+║  STATE_ABBR               2-letter state (e.g. "IL")                        ║
+║  STATE_FULL               Full state name (e.g. "Illinois")                 ║
+║  ZIP_CODE                 ZIP code (e.g. "60601")                            ║
+║  NEIGHBORHOOD             Neighborhood/district (e.g. "The Loop")           ║
+║  NEARBY_HIGHWAYS          Short highway ref (e.g. "Near I-90/I-94")         ║
+║  NEARBY_HIGHWAYS_FULL     Long highway ref (e.g. "I-90 and I-94")           ║
+║  NEARBY_HIGHWAYS_SHORT    Slash format (e.g. "I-90/I-94")                   ║
+║  STREET_CORRIDOR          Street corridor name (e.g. "Michigan Ave corridor")║
+║  GEO_LAT                  Latitude decimal (e.g. "41.8781")                 ║
+║  GEO_LNG                  Longitude decimal (e.g. "-87.6298")               ║
+║  GEO_REGION               ISO region (e.g. "US-IL")                         ║
+║  TWITTER_HANDLE           Twitter/X handle (e.g. "@chicagovein")            ║
+║  HERO_IMAGE_URL           Full URL to 1200×630 hero image                   ║
+║  LOGO_IMAGE_URL           Full URL to clinic logo PNG                        ║
+║  TREATMENT_ROOM_IMAGE_URL Full URL to treatment room photo                  ║
+║  FACEBOOK_URL             Full Facebook page URL                             ║
+║  INSTAGRAM_URL            Full Instagram profile URL                         ║
+║  GOOGLE_MAPS_LISTING_URL  Google Maps listing URL                            ║
+║  GOOGLE_MAPS_EMBED_URL    Google Maps embed src URL (from Share > Embed)     ║
+║  GBP_SHORT_LINK           Google short link (g.co/kgs/...)                  ║
+║  YELP_LISTING_URL         Yelp business page URL                             ║
+║  HEALTHGRADES_LISTING_URL Healthgrades listing URL                           ║
+║  MAPS_QUERY               URL-encoded address for ?q= (e.g. "123+Main+St+Chicago+IL+60601") ║
+║  PROVIDER_1_NAME          Full name of provider 1 (e.g. "Dr. Jane Smith")   ║
+║  PROVIDER_1_LAST          Last name / shortened (e.g. "Dr. Smith")          ║
+║  PROVIDER_1_PHOTO_URL     Headshot URL for provider 1                        ║
+║  PROVIDER_2_NAME          Full name of provider 2                            ║
+║  PROVIDER_2_LAST          Shortened name for provider 2                      ║
+║  PROVIDER_2_PHOTO_URL     Headshot URL for provider 2                        ║
+║  PROVIDER_3_NAME          Full name of provider 3                            ║
+║  PROVIDER_3_PHOTO_URL     Headshot URL for provider 3                        ║
+║  PROVIDER_4_NAME          Full name of provider 4                            ║
+║  PROVIDER_4_PHOTO_URL     Headshot URL for provider 4                        ║
+║  PROVIDER_5_NAME          Full name of provider 5                            ║
+║  PROVIDER_5_PHOTO_URL     Headshot URL for provider 5                        ║
+║  REVIEWER_1_NAME          Real patient reviewer name                         ║
+║  REVIEWER_2_NAME          Real patient reviewer name                         ║
+║  REVIEWER_3_NAME          Real patient reviewer name                         ║
+║  REVIEW_1_DATE            Date of review 1 (YYYY-MM-DD)                     ║
+║  REVIEW_2_DATE            Date of review 2 (YYYY-MM-DD)                     ║
+║  REVIEW_3_DATE            Date of review 3 (YYYY-MM-DD)                     ║
+║  SERVICE_CITY_2–11        Surrounding service area cities (10 total)         ║
+║  BA_PHOTO_1/2/3_URL       Before/after patient photo URLs                    ║
+║  PAGE_PUBLISHED_DATE      Page published date (YYYY-MM-DD)                  ║
+║  PAGE_MODIFIED_DATE       Last modified date (YYYY-MM-DD)                   ║
+║  COPYRIGHT_YEAR           Year for footer copyright                          ║
+║  ChIJ_REPLACE_WITH_REAL_PLACE_ID  Google Place ID for write-review links    ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║  ALSO UPDATE (content that needs manual rewriting, not just find-replace):  ║
+║  • Page title, meta description, meta keywords (lines ~11-16)               ║
+║  • Hero headline H1 and subtext                                              ║
+║  • About section paragraph                                                   ║
+║  • Treatment names, descriptions, and detail bullets                         ║
+║  • FAQ questions and answers                                                 ║
+║  • Review card quote text                                                    ║
+║  • Team credentials, job titles, role badges                                 ║
+║  • Insurance carrier names                                                   ║
+║  • GEO block paragraph (landmarks, highways)                                 ║
+║  • Footer description paragraph                                              ║
+║  • CSS :root color variables (5 lines ~line 700)                             ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en-US" itemscope itemtype="https://schema.org/MedicalClinic">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PRIMARY SEO META
+  ════════════════════════════════════════════════════════════════ -->
+  <title>Varicose Vein & Spider Vein Treatment in CITY_NAME, GA | CITY_NAME Medical Clinic</title>
+  <meta name="description" content="CITY_NAME Medical Clinic offers minimally invasive varicose vein and spider vein treatment in Midtown CITY_NAME. Endovenous ablation, Varithena®, and sclerotherapy — in-office procedures in 5–15 minutes. Call 404.609.0870." />
+  <meta name="keywords" content="varicose vein treatment CITY_NAME, spider vein removal CITY_NAME, endovenous ablation CITY_NAME, Varithena CITY_NAME, sclerotherapy CITY_NAME, vein doctor CITY_NAME, minimally invasive vein treatment Midtown CITY_NAME, vein clinic CITY_NAME GA" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="rating" content="general" />
+  <meta name="author" content="CITY_NAME Medical Clinic" />
+  <link rel="canonical" href="https://www.atlantamedicalvein.com/vein-treatment" />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       GEO META TAGS
+  ════════════════════════════════════════════════════════════════ -->
+  <meta name="geo.region" content="US-GA" />
+  <meta name="geo.placename" content="CITY_NAME, STATE_FULL" />
+  <meta name="geo.position" content="33.7838;-84.3902" />
+  <meta name="ICBM" content="33.7838, -84.3902" />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       OPEN GRAPH
+  ════════════════════════════════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="CITY_NAME Medical Clinic" />
+  <meta property="og:title" content="Varicose Vein & Spider Vein Treatment in CITY_NAME, GA | CITY_NAME Medical Clinic" />
+  <meta property="og:description" content="Minimally invasive varicose vein and spider vein treatment in Midtown CITY_NAME. Endovenous ablation, Varithena®, and sclerotherapy — in-office, 5–15 minutes. Board-certified vein specialists." />
+  <meta property="og:url" content="https://www.atlantamedicalvein.com/vein-treatment" />
+  <meta property="og:image" content="https://igoejeff.github.io/atlantamedicalvein/images/hero-bg.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="CITY_NAME Medical Clinic — Vein Treatment Specialists in Midtown CITY_NAME, GA" />
+  <meta property="og:image:secure_url" content="https://igoejeff.github.io/atlantamedicalvein/images/hero-bg.jpg" />
+  <meta property="og:updated_time" content="PAGE_MODIFIED_DATE" />
+  <meta property="article:modified_time" content="PAGE_MODIFIED_DATE" />
+  <meta property="article:published_time" content="PAGE_PUBLISHED_DATE" />
+  <meta property="article:author" content="CITY_NAME Medical Clinic" />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       TWITTER CARD
+  ════════════════════════════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@atlantamedical" />
+  <meta name="twitter:creator" content="@atlantamedical" />
+  <meta name="twitter:title" content="Varicose Vein & Spider Vein Treatment in CITY_NAME, GA | CITY_NAME Medical Clinic" />
+  <meta name="twitter:description" content="Minimally invasive vein treatment in Midtown CITY_NAME. Endovenous ablation, Varithena®, sclerotherapy. In-office, 5–15 minutes. Call 404.609.0870." />
+  <meta name="twitter:image" content="https://igoejeff.github.io/atlantamedicalvein/images/hero-bg.jpg" />
+  <meta name="twitter:image:alt" content="CITY_NAME Medical Clinic — Vein Treatment Specialists in Midtown CITY_NAME, GA" />
+  <meta name="twitter:label1" content="Procedure Time" />
+  <meta name="twitter:data1" content="5–15 minutes" />
+  <meta name="twitter:label2" content="Location" />
+  <meta name="twitter:data2" content="Midtown CITY_NAME, GA" />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FAVICON
+  ════════════════════════════════════════════════════════════════ -->
+  <link rel="icon" type="image/png" href="https://igoejeff.github.io/atlantamedicalvein/images/amc-logo.png" />
+  <link rel="apple-touch-icon" href="https://igoejeff.github.io/atlantamedicalvein/images/amc-logo.png" />
+  <meta name="theme-color" content="#0d2145" />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FONTS & ICONS
+  ════════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       PERFORMANCE — LCP PRELOAD (Core Web Vitals)
+  ════════════════════════════════════════════════════════════════ -->
+  <link rel="preload" as="image" href="https://igoejeff.github.io/atlantamedicalvein/images/hero-bg.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="https://igoejeff.github.io/atlantamedicalvein/images/amc-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap&display=swap" rel="stylesheet" />
+  <!-- FontAwesome deferred for performance -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"></noscript>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       STRUCTURED DATA — JSON-LD (Full E-E-A-T + GEO + AI Citation)
+  ════════════════════════════════════════════════════════════════ -->
+  <!-- VideoObject schema — TEMPLATE: Fill in real YouTube video details when available -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "https://www.atlantamedicalvein.com/vein-treatment#video",
+    "name": "Vein Treatment at CITY_NAME Medical Clinic — What to Expect",
+    "description": "A brief overview of the minimally invasive, in-office vein treatment experience at CITY_NAME Medical Clinic in Midtown CITY_NAME, GA. Covers endovenous ablation, Varithena® microfoam, and sclerotherapy procedures.",
+    "thumbnailUrl": "https://igoejeff.github.io/atlantamedicalvein/images/hero-bg.jpg",
+    "uploadDate": "PAGE_PUBLISHED_DATE",
+    "duration": "PT2M30S",
+    "contentUrl": "https://www.youtube.com/watch?v=REPLACE_WITH_REAL_VIDEO_ID",
+    "embedUrl": "https://www.youtube.com/embed/REPLACE_WITH_REAL_VIDEO_ID",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CITY_NAME Medical Clinic",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://igoejeff.github.io/atlantamedicalvein/images/amc-logo.png"
+      }
+    },
+    "inLanguage": "en-US",
+    "potentialAction": {
+      "@type": "WatchAction",
+      "target": "https://www.youtube.com/watch?v=REPLACE_WITH_REAL_VIDEO_ID"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+
+      {
+        "@type": ["MedicalClinic", "LocalBusiness"],
+        "@id": "https://www.atlantamedicalvein.com/#clinic",
+        "name": "CITY_NAME Medical Clinic",
+        "alternateName": "AMC Vein Treatment Center",
+        "description": "CITY_NAME Medical Clinic is a dedicated vein treatment practice located in Midtown CITY_NAME, STATE_FULL. We specialize in minimally invasive, in-office treatment of varicose veins and spider veins using endovenous ablation, Varithena® microfoam, and sclerotherapy. All procedures are performed by board-certified vein specialists.",
+        "url": "https://www.atlantamedicalvein.com",
+        "telephone": "+14046090870",
+        "email": "info@atlantamedicalclinic.com",
+        "logo": "https://igoejeff.github.io/atlantamedicalvein/images/amc-logo.png",
+        "image": "https://igoejeff.github.io/atlantamedicalvein/images/hero-bg.jpg",
+        "priceRange": "$$",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": "Cash, Credit Card, Insurance",
+        "medicalSpecialty": "Vascular Surgery",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "197 14th St NW, Suite 300",
+          "addressLocality": "CITY_NAME",
+          "addressRegion": "GA",
+          "postalCode": "30318",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 33.7838,
+          "longitude": -84.3902
+        },
+        "areaServed": [
+          {"@type": "City", "name": "CITY_NAME"},
+          {"@type": "City", "name": "Buckhead"},
+          {"@type": "City", "name": "Midtown CITY_NAME"},
+          {"@type": "City", "name": "Sandy Springs"},
+          {"@type": "City", "name": "Marietta"},
+          {"@type": "City", "name": "Decatur"},
+          {"@type": "City", "name": "Alpharetta"},
+          {"@type": "State", "name": "STATE_FULL"}
+        ],
+        "openingHoursSpecification": [
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "08:00", "closes": "17:00"},
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "08:00", "closes": "17:00"},
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:00", "closes": "17:00"},
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "08:00", "closes": "17:00"}
+        ],
+        "hasMap": "https://maps.google.com/?q=MAPS_QUERY",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "300",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "REVIEWER_1_NAME"},
+            "datePublished": "REVIEW_1_DATE",
+            "reviewBody": "PROVIDER_1_LAST and the team at CITY_NAME Medical Clinic were exceptional. My varicose vein procedure took less than 15 minutes and I walked out feeling great. The entire process from ultrasound to treatment was handled professionally and efficiently.",
+            "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+          },
+          {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "REVIEWER_2_NAME"},
+            "datePublished": "REVIEW_2_DATE",
+            "reviewBody": "Best decision I've ever made. The sclerotherapy procedure was quick and painless. Staff was knowledgeable and explained everything clearly. Highly recommend CITY_NAME Medical Clinic for anyone dealing with spider veins.",
+            "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+          },
+          {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "REVIEWER_3_NAME"},
+            "datePublished": "REVIEW_3_DATE",
+            "reviewBody": "The Varithena treatment at CITY_NAME Medical Clinic was straightforward and effective. Greg and Ovi were thorough with the ultrasound and made sure I understood my treatment plan before any procedure was done.",
+            "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+14046090870",
+          "contactType": "customer service",
+          "areaServed": "US-GA",
+          "availableLanguage": "English",
+          "hoursAvailable": [
+            {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"]}
+          ]
+        },
+        "sameAs": [
+          "https://www.atlantamedicalclinic.com",
+          "https://www.atlantamedicalvein.com",
+          "https://www.facebook.com/atlantamedicalclinic",
+          "https://www.instagram.com/atlantamedicalclinic",
+          "https://GBP_SHORT_LINK",
+          "https://www.google.com/maps/place/CITY_NAME+Medical+Clinic/@33.7838,-84.3902,17z",
+          "https://www.yelp.com/biz/atlanta-medical-clinic-atlanta-4",
+          "https://www.healthgrades.com/group-directory/ga-georgia/atlanta/atlanta-medical-clinic",
+          "https://www.vitals.com/clinics/atlanta-medical-clinic",
+          "https://npiregistry.cms.hhs.gov"
+        ],
+        "employee": [
+          {"@id": "https://www.atlantamedicalvein.com/#dr-hashim"},
+          {"@id": "https://www.atlantamedicalvein.com/#dr-duarte"},
+          {"@id": "https://www.atlantamedicalvein.com/#leith-fitch"},
+          {"@id": "https://www.atlantamedicalvein.com/#ovi-cioloca"},
+          {"@id": "https://www.atlantamedicalvein.com/#greg-lott"}
+        ],
+        "availableService": [
+          {"@id": "https://www.atlantamedicalvein.com/#endovenous-ablation"},
+          {"@id": "https://www.atlantamedicalvein.com/#varithena"},
+          {"@id": "https://www.atlantamedicalvein.com/#sclerotherapy"}
+        ]
+      },
+
+      {
+        "@type": "MedicalCondition",
+        "@id": "https://www.atlantamedicalvein.com/#varicose-veins",
+        "name": "Varicose Veins",
+        "alternateName": ["Chronic Venous Insufficiency", "CVI", "Venous Reflux"],
+        "description": "Varicose veins are enlarged, twisted veins caused by weakened or damaged valves inside the veins. When these valves fail to function properly, blood pools in the vein, causing it to stretch and bulge. They are a clinical manifestation of chronic venous insufficiency (CVI) and most commonly affect the legs.",
+        "associatedAnatomy": {
+          "@type": "AnatomicalStructure",
+          "name": "Lower Extremity Venous System"
+        },
+        "signOrSymptom": [
+          {"@type": "MedicalSymptom", "name": "Aching or heavy legs"},
+          {"@type": "MedicalSymptom", "name": "Visible bulging veins"},
+          {"@type": "MedicalSymptom", "name": "Leg swelling"},
+          {"@type": "MedicalSymptom", "name": "Skin discoloration near ankle"},
+          {"@type": "MedicalSymptom", "name": "Nocturnal leg cramps"}
+        ],
+        "possibleTreatment": [
+          {"@id": "https://www.atlantamedicalvein.com/#endovenous-ablation"},
+          {"@id": "https://www.atlantamedicalvein.com/#varithena"}
+        ],
+        "relevantSpecialty": "Vascular Surgery"
+      },
+
+      {
+        "@type": "MedicalCondition",
+        "@id": "https://www.atlantamedicalvein.com/#spider-veins",
+        "name": "Spider Veins",
+        "alternateName": ["Telangiectasias", "Thread Veins", "Surface Veins"],
+        "description": "Spider veins (telangiectasias) are small, dilated blood vessels visible near the skin surface, appearing as red, blue, or purple web-like patterns. They commonly occur on the legs and face and may result from venous insufficiency, hormonal changes, prolonged standing, genetic predisposition, or sun exposure.",
+        "associatedAnatomy": {
+          "@type": "AnatomicalStructure",
+          "name": "Superficial Cutaneous Venous Network"
+        },
+        "signOrSymptom": [
+          {"@type": "MedicalSymptom", "name": "Visible red, blue, or purple vein patterns"},
+          {"@type": "MedicalSymptom", "name": "Mild burning or itching at vein site"},
+          {"@type": "MedicalSymptom", "name": "Cosmetic concern on legs or face"}
+        ],
+        "possibleTreatment": [
+          {"@id": "https://www.atlantamedicalvein.com/#sclerotherapy"}
+        ],
+        "relevantSpecialty": "Vascular Surgery"
+      },
+
+      {
+        "@type": "MedicalWebPage",
+        "@id": "https://www.atlantamedicalvein.com/vein-treatment#webpage",
+        "url": "https://www.atlantamedicalvein.com/vein-treatment",
+        "name": "Varicose Vein & Spider Vein Treatment in CITY_NAME, GA | CITY_NAME Medical Clinic",
+        "description": "Minimally invasive varicose vein and spider vein treatment in Midtown CITY_NAME. Endovenous ablation, Varithena®, and sclerotherapy performed in-office in 5–15 minutes.",
+        "isPartOf": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "about": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "datePublished": "PAGE_PUBLISHED_DATE",
+        "dateModified": "PAGE_MODIFIED_DATE",
+        "lastReviewed": "2026-03-12",
+        "reviewedBy": {"@id": "https://www.atlantamedicalvein.com/#dr-hashim"},
+        "inLanguage": "en-US",
+        "medicalAudience": {
+          "@type": "MedicalAudience",
+          "audienceType": "Patient",
+          "healthCondition": [
+            {"@type": "MedicalCondition", "name": "Varicose Veins"},
+            {"@type": "MedicalCondition", "name": "Spider Veins"}
+          ]
+        },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".speakable-hero", ".speakable-about", ".speakable-treatments", ".faq-answer p"]
+        },
+        "breadcrumb": {"@id": "https://www.atlantamedicalvein.com/vein-treatment#breadcrumb"}
+      },
+
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.atlantamedicalvein.com/vein-treatment#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.atlantamedicalvein.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Vein Treatment",
+            "item": "https://www.atlantamedicalvein.com/vein-treatment"
+          }
+        ]
+      },
+
+      {
+        "@type": "WebSite",
+        "@id": "https://www.atlantamedicalvein.com/#website",
+        "url": "https://www.atlantamedicalvein.com",
+        "name": "CITY_NAME Medical Clinic",
+        "description": "Minimally invasive vein treatment specialists in Midtown CITY_NAME, STATE_FULL.",
+        "publisher": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.atlantamedicalvein.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+
+      {
+        "@type": "Person",
+        "@id": "https://www.atlantamedicalvein.com/#dr-hashim",
+        "name": "PROVIDER_1_NAME",
+        "jobTitle": "Vein Specialist",
+        "medicalSpecialty": "Vascular Medicine",
+        "description": "PROVIDER_1_NAME is a vein specialist at CITY_NAME Medical Clinic, providing minimally invasive treatment for varicose veins and spider veins in Midtown CITY_NAME, STATE_FULL.",
+        "worksFor": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "image": "PROVIDER_1_PHOTO_URL"
+      },
+
+      {
+        "@type": "Person",
+        "@id": "https://www.atlantamedicalvein.com/#dr-duarte",
+        "name": "PROVIDER_2_NAME",
+        "jobTitle": "Vein Specialist",
+        "honorificSuffix": "DO",
+        "medicalSpecialty": "Vascular Medicine",
+        "description": "PROVIDER_2_NAME, DO is a board-eligible physician and vein specialist at CITY_NAME Medical Clinic, focusing on minimally invasive vein procedures in CITY_NAME, GA.",
+        "worksFor": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "image": "PROVIDER_2_PHOTO_URL"
+      },
+
+      {
+        "@type": "Person",
+        "@id": "https://www.atlantamedicalvein.com/#leith-fitch",
+        "name": "PROVIDER_3_NAME",
+        "jobTitle": "Physician Assistant — Vein Specialist",
+        "honorificSuffix": "PA-C",
+        "description": "PROVIDER_3_NAME, PA-C is a certified physician assistant and vein specialist at CITY_NAME Medical Clinic, performing in-office vein procedures including sclerotherapy and Varithena® in CITY_NAME, GA.",
+        "worksFor": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "image": "PROVIDER_3_PHOTO_URL"
+      },
+
+      {
+        "@type": "Person",
+        "@id": "https://www.atlantamedicalvein.com/#ovi-cioloca",
+        "name": "PROVIDER_4_NAME",
+        "jobTitle": "Vascular Technologist",
+        "honorificSuffix": "RVS",
+        "description": "PROVIDER_4_NAME, RVS is a Registered Vascular Sonographer at CITY_NAME Medical Clinic, performing diagnostic venous duplex ultrasound to guide vein treatment planning in CITY_NAME, GA.",
+        "worksFor": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "image": "PROVIDER_4_PHOTO_URL"
+      },
+
+      {
+        "@type": "Person",
+        "@id": "https://www.atlantamedicalvein.com/#greg-lott",
+        "name": "PROVIDER_5_NAME",
+        "jobTitle": "Vascular Technologist",
+        "honorificSuffix": "RVT, RDMS",
+        "description": "PROVIDER_5_NAME, RVT, RDMS is a Registered Vascular Technician and Diagnostic Medical Sonographer at CITY_NAME Medical Clinic, specializing in venous duplex ultrasound imaging in CITY_NAME, GA.",
+        "worksFor": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "image": "PROVIDER_5_PHOTO_URL"
+      },
+
+      {
+        "@type": "MedicalProcedure",
+        "@id": "https://www.atlantamedicalvein.com/#endovenous-ablation",
+        "name": "Endovenous Ablation",
+        "alternateName": ["Thermal Ablation", "Endovenous Thermal Ablation", "EVTA"],
+        "description": "Endovenous ablation is a minimally invasive, in-office procedure used to treat larger symptomatic varicose veins. A thin catheter is inserted into the diseased vein under ultrasound guidance and heat energy is applied to close the vein. Performed under local anesthesia with no surgical incisions. Typical procedure time is 5–15 minutes.",
+        "procedureType": "Therapeutic",
+        "bodyLocation": "Lower Extremity Veins",
+        "followup": "Minimal downtime. Most patients resume normal activity the same day.",
+        "preparation": "Venous duplex ultrasound evaluation required prior to procedure.",
+        "howPerformed": "Ultrasound-guided catheter insertion with thermal energy delivery under local anesthesia.",
+        "provider": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "relevantSpecialty": "Vascular Surgery"
+      },
+
+      {
+        "@type": "MedicalProcedure",
+        "@id": "https://www.atlantamedicalvein.com/#varithena",
+        "name": "Varithena® Microfoam Sclerotherapy",
+        "alternateName": ["Varithena", "Polidocanol Injectable Foam", "Branded Foam Sclerotherapy"],
+        "description": "Varithena® is an FDA-approved injectable microfoam (polidocanol) used for the treatment of incompetent great saphenous veins, accessory saphenous veins, and visible varicosities of the great saphenous vein system. The microfoam is injected directly into the diseased vein, causing it to collapse and be reabsorbed. Performed in-office without general anesthesia.",
+        "procedureType": "Therapeutic",
+        "bodyLocation": "Saphenous Vein System, Lower Extremity",
+        "followup": "Compression stockings worn post-procedure. Minimal downtime.",
+        "preparation": "Venous duplex ultrasound evaluation required prior to procedure.",
+        "legalStatus": "FDA-approved",
+        "provider": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "relevantSpecialty": "Vascular Surgery"
+      },
+
+      {
+        "@type": "MedicalProcedure",
+        "@id": "https://www.atlantamedicalvein.com/#sclerotherapy",
+        "name": "Sclerotherapy",
+        "alternateName": ["Liquid Sclerotherapy", "Spider Vein Injection", "Chemical Sclerotherapy"],
+        "description": "Sclerotherapy is an in-office procedure for treating spider veins and small varicosities. A sclerosant solution is injected directly into the target vessel using a fine needle. The solution irritates the vessel wall causing it to seal shut and gradually fade. No anesthesia required. Procedure time is typically 15 minutes or less.",
+        "procedureType": "Therapeutic",
+        "bodyLocation": "Spider Veins, Reticular Veins, Small Varicosities, Lower Extremity",
+        "followup": "Compression stockings recommended. No downtime required.",
+        "preparation": "Clinical consultation required. Ultrasound may be performed for larger varicosities.",
+        "provider": {"@id": "https://www.atlantamedicalvein.com/#clinic"},
+        "relevantSpecialty": "Vascular Surgery"
+      },
+
+      {
+        "@type": "HowTo",
+        "@id": "https://www.atlantamedicalvein.com/vein-treatment#howto",
+        "name": "How to Get Vein Treatment at CITY_NAME Medical Clinic",
+        "description": "The step-by-step process for receiving minimally invasive vein treatment at CITY_NAME Medical Clinic in Midtown CITY_NAME, GA.",
+        "totalTime": "PT15M",
+        "supply": [
+          {"@type": "HowToSupply", "name": "Venous Duplex Ultrasound"},
+          {"@type": "HowToSupply", "name": "Local Anesthesia (for ablation)"},
+          {"@type": "HowToSupply", "name": "Compression Stockings (post-procedure)"}
+        ],
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Consultation & Venous Ultrasound",
+            "text": "Your first visit includes a clinical consultation and a venous duplex ultrasound to map your veins and identify diseased vessels. Ultrasound is a billable diagnostic service. Results guide your treatment plan.",
+            "url": "https://www.atlantamedicalvein.com/vein-treatment#expect"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Personalized Treatment Plan",
+            "text": "Based on ultrasound findings and clinical evaluation, your specialist creates a custom treatment plan. Insurance patients begin the prior authorization process. Cash-pay patients may be treated same day.",
+            "url": "https://www.atlantamedicalvein.com/vein-treatment#expect"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "In-Office Procedure (5–15 min)",
+            "text": "Procedures are performed entirely in-office — no hospital, no general anesthesia. Most take 5–15 minutes. The appropriate procedure is selected based on your individualized plan.",
+            "url": "https://www.atlantamedicalvein.com/vein-treatment#expect"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Walk Out & Resume Activity",
+            "text": "Most patients walk out immediately after their procedure. Downtime is minimal. Specific post-procedure instructions are provided by your treating specialist.",
+            "url": "https://www.atlantamedicalvein.com/vein-treatment#expect"
+          }
+        ]
+      },
+
+      {
+        "@type": "MedicalCondition",
+        "@id": "https://www.atlantamedicalvein.com/#reticular-veins",
+        "name": "Reticular Veins",
+        "alternateName": ["Feeder Veins", "Blue Veins", "Intradermal Varicosities"],
+        "description": "Reticular veins are small, dilated blue-green veins visible beneath the skin, typically 1–3 mm in diameter. They often feed spider veins (telangiectasias) and are an intermediate stage between varicose veins and spider veins. They are commonly treated with sclerotherapy.",
+        "associatedAnatomy": {
+          "@type": "AnatomicalStructure",
+          "name": "Superficial Venous Network, Lower Extremity"
+        },
+        "signOrSymptom": [
+          {"@type": "MedicalSymptom", "name": "Visible blue-green vein network under skin"},
+          {"@type": "MedicalSymptom", "name": "Mild aching or discomfort"},
+          {"@type": "MedicalSymptom", "name": "Feeding spider vein clusters"}
+        ],
+        "possibleTreatment": [
+          {"@id": "https://www.atlantamedicalvein.com/#sclerotherapy"}
+        ],
+        "relevantSpecialty": "Vascular Surgery"
+      },
+
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What vein treatments does CITY_NAME Medical Clinic offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CITY_NAME Medical Clinic offers three minimally invasive, in-office vein treatments: endovenous ablation (thermal procedure for larger varicose veins), Varithena® microfoam sclerotherapy (FDA-approved injectable foam for suitable varicose vein treatments), and sclerotherapy (liquid injection for spider veins and small varicosities)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a vein treatment procedure take at CITY_NAME Medical Clinic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most vein procedures at CITY_NAME Medical Clinic take between 5 and 15 minutes and are performed in-office. Patients typically walk in and walk out the same day with minimal downtime."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CITY_NAME Medical Clinic accept insurance for vein treatment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, CITY_NAME Medical Clinic accepts most major insurance plans for vein treatment. However, insurance-covered procedures require prior authorization before they can be scheduled. Same-day procedures are available for cash-pay patients only."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the ultrasound screening free at CITY_NAME Medical Clinic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Ultrasound screening at CITY_NAME Medical Clinic is a diagnostic service and is not complimentary. A venous duplex ultrasound is performed to map vein anatomy and guide treatment planning prior to any procedure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the clinic hours for CITY_NAME Medical Clinic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CITY_NAME Medical Clinic is open Monday through Thursday only. The clinic is closed on Friday, Saturday, and Sunday. The office is located at 197 14th St NW, Suite 300, CITY_NAME, GA 30318. Call 404.609.0870 to schedule."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is CITY_NAME Medical Clinic located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CITY_NAME Medical Clinic is located at 197 14th St NW, Suite 300, CITY_NAME, GA 30318, in Midtown CITY_NAME near the STREET_CORRIDOR. The clinic is accessible from NEARBY_HIGHWAYS_SHORT and serves patients throughout the greater CITY_NAME metro area including Buckhead, Sandy Springs, Decatur, Marietta, and Alpharetta."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is endovenous ablation and is it painful?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Endovenous ablation is a minimally invasive procedure that uses thermal energy to close diseased varicose veins from the inside. A thin catheter is inserted into the vein under ultrasound guidance and local anesthesia is administered, so patients typically experience minimal discomfort. The procedure requires no surgical incisions and takes 5–15 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Varithena® and how is it different from regular sclerotherapy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Varithena® is an FDA-approved injectable microfoam (polidocanol) specifically designed for treating incompetent saphenous veins and larger varicosities. Unlike traditional liquid sclerotherapy, the microfoam can fill and treat larger, more complex venous segments. Standard liquid sclerotherapy is used for spider veins and smaller surface varicosities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who are the vein specialists at CITY_NAME Medical Clinic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The vein treatment team at CITY_NAME Medical Clinic includes PROVIDER_1_NAME (Vein Specialist), PROVIDER_2_NAME, DO (Vein Specialist), PROVIDER_3_NAME, PA-C (Physician Assistant — Vein Specialist), PROVIDER_4_NAME, RVS (Registered Vascular Sonographer), and PROVIDER_5_NAME, RVT, RDMS (Registered Vascular Technician)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can varicose veins come back after treatment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Treated veins do not return after successful closure. However, new varicose veins can develop over time due to underlying venous insufficiency, genetics, lifestyle, or hormonal factors. Regular follow-up and ultrasound monitoring can identify new disease early. Your specialist will discuss your individual risk and long-term management options."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CITY_NAME Medical Clinic treat vein patients near Buckhead or Sandy Springs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. CITY_NAME Medical Clinic at 197 14th St NW, Suite 300, CITY_NAME, GA 30318 is centrally located in Midtown CITY_NAME and easily accessible from Buckhead, Sandy Springs, Decatur, Marietta, Alpharetta, Dunwoody, Smyrna, and throughout the metro CITY_NAME area via NEARBY_HIGHWAYS_FULL."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What insurance does CITY_NAME Medical Clinic accept?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CITY_NAME Medical Clinic accepts most major insurance plans including Blue Cross Blue Shield, Aetna, Cigna, UnitedHealthcare, Humana, Medicare, and many others. All insurance-covered vein procedures require prior authorization. Call 404.609.0870 to verify your specific plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Am I a candidate for vein treatment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most adults with symptomatic varicose veins or spider veins are candidates for minimally invasive vein treatment. A clinical consultation and venous duplex ultrasound at CITY_NAME Medical Clinic will determine the appropriate treatment for your specific condition. Common symptoms that indicate candidacy include leg aching, heaviness, visible bulging veins, swelling, and skin changes near the ankle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is vein treatment painful?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most patients report minimal discomfort during in-office vein procedures at CITY_NAME Medical Clinic. Endovenous ablation is performed under local anesthesia, so the treated area is numb during the procedure. Sclerotherapy and Varithena® involve small needle injections. Mild soreness or bruising may occur after treatment and typically resolves within a few days."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the recovery time after vein treatment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Recovery after minimally invasive vein treatment at CITY_NAME Medical Clinic is minimal. Most patients walk out immediately after the procedure and resume normal daily activities the same day. Compression stockings are typically recommended after certain procedures. Your specialist will provide specific post-procedure instructions at your visit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does vein treatment cost at CITY_NAME Medical Clinic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The cost of vein treatment depends on the type of procedure, the number of sessions, and your insurance coverage. Symptomatic varicose vein procedures (endovenous ablation and Varithena®) are often covered by insurance when medically necessary and prior authorized. Sclerotherapy for cosmetic spider veins is typically self-pay. Cash-pay pricing is available for all procedures. Call 404.609.0870 for a personalized cost estimate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are reticular veins and do you treat them?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Reticular veins are small, blue-green veins visible beneath the skin, typically 1–3 mm in diameter. They often feed spider veins and are an intermediate stage between varicose and spider veins. CITY_NAME Medical Clinic treats reticular veins with sclerotherapy. A clinical evaluation will determine whether reticular veins are contributing to your spider vein pattern."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need a referral to see a vein specialist at CITY_NAME Medical Clinic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most patients do not need a referral to schedule a consultation at CITY_NAME Medical Clinic. However, your insurance plan may require a referral or prior authorization for covered procedures. Our team verifies your specific insurance requirements when you call 404.609.0870 Monday through Thursday."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many vein treatment sessions will I need?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The number of sessions required depends on the type and extent of your vein disease. Larger varicose veins treated with endovenous ablation or Varithena® may require one to two sessions per vein segment. Spider veins treated with sclerotherapy often require multiple sessions spaced 4–6 weeks apart for optimal results. Your specialist will provide a realistic treatment timeline at your consultation."
+            }
+          }
+        ]
+      }
+
+    ]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       STYLES
+  ════════════════════════════════════════════════════════════════ -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f9fc;
+      color: #1a2233;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ═══════════════════════════════════════════════════════════
+       TEMPLATE BRAND TOKENS — Replace these for each new client
+       1. --navy       → client primary dark color
+       2. --blue       → client accent/action color
+       3. --blue-mid   → darker shade of --blue (hover states)
+       4. --blue-light → very light tint of --blue (backgrounds)
+       5. --gold       → optional secondary accent
+       Search for «TEMPLATE:» comments below for all swap points
+    ════════════════════════════════════════════════════════════ */
+    :root {
+      --navy:       #0d2145;   /* TEMPLATE: primary dark (nav, hero, footer) */
+      --blue:       #1B75BB;   /* TEMPLATE: action color (buttons, links, icons) */
+      --blue-mid:   #1561a0;   /* TEMPLATE: button hover — usually darken --blue 10% */
+      --blue-light: #e8f4ff;   /* TEMPLATE: light tint for card backgrounds */
+      --gold:       #c8973a;   /* TEMPLATE: optional accent (badges, highlights) */
+      --white:      #ffffff;
+      --off-white:  #f7f9fc;
+      --light-gray: #eef2f7;
+      --mid-gray:   #d0d8e4;
+      --text:       #1a2233;
+      --text-muted: #4a5568;
+      --radius:     10px;
+      --radius-lg:  18px;
+      --shadow:     0 4px 24px rgba(13,33,69,.10);
+      --shadow-lg:  0 12px 48px rgba(13,33,69,.16);
+    }
+
+    /* ── GLOBAL SCROLL OFFSET (sticky header) ──────────────────── */
+    /* Ensures anchor links land below the fixed header */
+    [id] { scroll-margin-top: 80px; }
+    @media (max-width: 768px) { [id] { scroll-margin-top: 70px; } }
+
+    /* ── SKIP NAV (Accessibility) ─────────────────────────────── */
+    .skip-nav {
+      position: absolute; top: -100%; left: 0;
+      background: var(--blue); color: #fff;
+      padding: 12px 20px; font-weight: 700;
+      z-index: 9999; border-radius: 0 0 8px 0;
+    }
+    .skip-nav:focus { top: 0; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 80px 0; }
+
+    /* ── TOP BAR ──────────────────────────────────────────────── */
+    .top-bar {
+      background: var(--navy);
+      color: rgba(255,255,255,.82);
+      font-size: 0.8rem; padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .top-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .top-bar a { color: rgba(255,255,255,.82); }
+    .top-bar a:hover { color: #fff; }
+    .top-bar i { margin-right: 6px; color: #63c0f5; font-size: 0.75rem; }
+    .top-bar-address { /* hide on very small screens */ }
+    @media (max-width: 480px) {
+      .top-bar-address { display: none; }
+      .top-bar-inner { justify-content: center; }
+    }
+
+    /* ── HEADER ───────────────────────────────────────────────── */
+    .site-header {
+      background: var(--white);
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 16px rgba(13,33,69,.10);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .logo-img { height: 42px; width: auto; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text); transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.nav-active { color: var(--blue); font-weight: 600; border-bottom: 2px solid var(--blue); padding-bottom: 2px; }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .btn-phone {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--navy); font-weight: 600; font-size: 0.95rem;
+      border: 2px solid var(--mid-gray); padding: 8px 16px; border-radius: 50px;
+      transition: all .2s; min-height: 44px;
+    }
+    .btn-phone:hover { border-color: var(--blue); color: var(--blue); }
+    .btn-phone i { color: var(--blue); }
+    .btn-primary {
+      background: var(--blue); color: var(--white);
+      font-weight: 600; font-size: 0.9rem;
+      padding: 10px 22px; border-radius: 50px; border: none; cursor: pointer;
+      transition: background .2s, transform .15s;
+      display: inline-flex; align-items: center; gap: 8px;
+      min-height: 44px; /* WCAG touch target */
+    }
+    .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
+    .btn-primary:focus-visible, .btn-outline:focus-visible, .btn-phone:focus-visible,
+    .btn-white:focus-visible, .btn-ghost-white:focus-visible {
+      outline: 3px solid #63c0f5; outline-offset: 3px;
+    }
+    .btn-outline {
+      background: transparent; color: #fff;
+      font-weight: 600; font-size: 0.9rem;
+      padding: 10px 22px; border-radius: 50px;
+      border: 2px solid rgba(255,255,255,.5); cursor: pointer;
+      transition: all .2s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+
+    /* ── BREADCRUMB ───────────────────────────────────────────── */
+    .breadcrumb-bar {
+      background: var(--light-gray);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--mid-gray);
+    }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-muted); list-style: none; }
+    .breadcrumb li + li::before { content: '›'; color: var(--mid-gray); }
+    .breadcrumb a { color: var(--blue); }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb [aria-current] { color: var(--text-muted); font-weight: 500; }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3a6e 60%, #1B75BB 100%);
+      padding: 80px 0 70px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('https://igoejeff.github.io/atlantamedicalvein/images/hero-bg.jpg') center/cover no-repeat;
+      opacity: 0.08;
+    }
+    .hero-inner {
+      position: relative; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(99,192,245,.15); border: 1px solid rgba(99,192,245,.35);
+      color: #a8d8f5; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 7px 14px; border-radius: 50px; margin-bottom: 20px;
+    }
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.9rem; font-weight: 700; color: var(--white);
+      line-height: 1.18; margin-bottom: 18px;
+    }
+    .hero-headline em { font-style: italic; color: #63c0f5; }
+    .hero-sub {
+      color: rgba(255,255,255,.78); font-size: 1.05rem;
+      line-height: 1.65; margin-bottom: 32px; max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+    .hero-trust { display: flex; gap: 20px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 7px; color: rgba(255,255,255,.72); font-size: 0.82rem; font-weight: 500; }
+    .trust-item i { color: #63c0f5; font-size: 0.9rem; }
+    .hero-card {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius-lg); padding: 36px 32px; backdrop-filter: blur(12px);
+    }
+    .hero-card-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #63c0f5; margin-bottom: 24px; }
+    .hc-stat { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .hc-stat:last-child { border-bottom: none; }
+    .hc-icon { width: 42px; height: 42px; background: rgba(27,117,187,.25); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #63c0f5; font-size: 1rem; flex-shrink: 0; }
+    .hc-label { color: rgba(255,255,255,.65); font-size: 0.82rem; line-height: 1.3; }
+    .hc-value { color: var(--white); font-weight: 600; font-size: 0.95rem; }
+
+    /* ── STATS RIBBON ─────────────────────────────────────────── */
+    .stats-ribbon { background: var(--navy); padding: 0; }
+    .stats-inner { display: flex; align-items: stretch; justify-content: center; }
+    .stat-item { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px 48px; text-align: center; border-right: 1px solid rgba(255,255,255,.10); }
+    .stat-item:last-child { border-right: none; }
+    .stat-value { display: flex; align-items: baseline; white-space: nowrap; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-suffix { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: #63c0f5; margin-left: 2px; }
+    .stat-label { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 4px; }
+
+    /* ── SECTION LABELS ───────────────────────────────────────── */
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--blue-light); color: var(--blue);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 50px; margin-bottom: 14px;
+    }
+    .section-headline { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--navy); line-height: 1.22; margin-bottom: 14px; }
+    .section-headline em { font-style: italic; color: var(--blue); }
+    .section-sub { color: var(--text-muted); font-size: 1rem; line-height: 1.65; max-width: 620px; }
+    .section-header { margin-bottom: 48px; }
+    .section-header.centered { text-align: center; }
+    .section-header.centered .section-sub { margin: 0 auto; }
+
+    /* ── ABOUT ────────────────────────────────────────────────── */
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .about-img-wrap { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/3; }
+    .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .about-points { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+    .about-point { display: flex; align-items: flex-start; gap: 12px; }
+    .about-point i { color: var(--blue); font-size: 1rem; margin-top: 3px; flex-shrink: 0; }
+    .about-point-text strong { display: block; font-weight: 600; font-size: 0.95rem; color: var(--navy); }
+    .about-point-text span { font-size: 0.88rem; color: var(--text-muted); }
+
+    /* ── CONDITIONS EDUCATION ─────────────────────────────────── */
+    .conditions-edu { background: var(--off-white); }
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .edu-card { background: var(--white); border-radius: var(--radius-lg); padding: 32px 28px; border-left: 4px solid var(--blue); box-shadow: var(--shadow); }
+    .edu-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .edu-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+    .edu-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .edu-card ul li { display: flex; align-items: flex-start; gap: 9px; font-size: 0.88rem; color: var(--text-muted); }
+    .edu-card ul li i { color: var(--blue); font-size: 0.8rem; margin-top: 4px; flex-shrink: 0; }
+    .risk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
+    .risk-item { background: var(--white); border-radius: var(--radius); padding: 16px; text-align: center; border: 1px solid var(--mid-gray); }
+    .risk-item i { font-size: 1.3rem; color: var(--blue); margin-bottom: 8px; display: block; }
+    .risk-item span { font-size: 0.82rem; font-weight: 600; color: var(--navy); }
+
+    /* ── TEAM ─────────────────────────────────────────────────── */
+    .team { background: var(--white); }
+    .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+    .team-card { background: var(--off-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; text-align: center; border: 1px solid var(--mid-gray); }
+    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
+    .team-photo-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; }
+    .team-photo { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .team-photo-placeholder { width: 100%; aspect-ratio: 1/1; background: linear-gradient(135deg, var(--navy) 0%, var(--blue-mid) 100%); display: flex; align-items: center; justify-content: center; }
+    .team-photo-placeholder .initials { font-size: 2rem; font-weight: 700; color: rgba(255,255,255,.85); font-family: 'Playfair Display', serif; }
+    .team-info { padding: 16px 14px 18px; }
+    .team-name { font-weight: 700; font-size: 0.97rem; color: var(--navy); margin-bottom: 3px; }
+    .team-cred { font-size: 0.75rem; font-weight: 600; color: var(--blue); margin-bottom: 4px; }
+    .team-title { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; line-height: 1.35; }
+    .team-role-badge { display: inline-block; margin-top: 8px; background: var(--blue-light); color: var(--blue); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 10px; border-radius: 50px; }
+    .team-role-badge.tech { background: #e8f8f5; color: #0d7a65; }
+    .eeat-bar { background: var(--navy); border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 16px 20px; margin-top: 32px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .eeat-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.80); font-size: 0.82rem; }
+    .eeat-item i { color: #63c0f5; }
+    .eeat-divider { color: rgba(255,255,255,.2); }
+
+    /* ── TREATMENTS ───────────────────────────────────────────── */
+    .treatments { background: var(--off-white); }
+    .tx-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .tx-card { background: var(--white); border: 1px solid var(--mid-gray); border-radius: var(--radius-lg); padding: 32px 28px; transition: border-color .2s, box-shadow .2s, transform .2s; }
+    .tx-card:hover { border-color: var(--blue); box-shadow: 0 8px 32px rgba(27,117,187,.12); transform: translateY(-3px); }
+    .tx-num { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
+    .tx-icon { width: 52px; height: 52px; background: var(--blue-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--blue); font-size: 1.3rem; margin-bottom: 18px; }
+    .tx-name { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.25; }
+    .tx-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 16px; }
+    .tx-details { margin-bottom: 18px; }
+    .tx-detail-item { display: flex; align-items: flex-start; gap: 8px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; }
+    .tx-detail-item i { color: var(--blue); font-size: 0.78rem; margin-top: 4px; flex-shrink: 0; }
+    .tx-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--blue-light); color: var(--blue); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 12px; border-radius: 50px; }
+    .tx-link { display: inline-flex; align-items: center; gap: 6px; color: var(--blue); font-size: 0.85rem; font-weight: 600; margin-top: 14px; transition: gap .2s; }
+    .tx-link:hover { gap: 10px; text-decoration: underline; }
+
+    /* ── WHAT TO EXPECT ───────────────────────────────────────── */
+    .expect { background: var(--navy); }
+    .expect .section-headline { color: var(--white); }
+    .expect .section-sub { color: rgba(255,255,255,.70); }
+    .expect-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+    .expect-step { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius-lg); padding: 28px 22px; }
+    .step-num { width: 36px; height: 36px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+    .step-title { font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: 8px; }
+    .step-desc { font-size: 0.86rem; color: rgba(255,255,255,.65); line-height: 1.6; }
+    .notice-box { background: rgba(99,192,245,.10); border: 1px solid rgba(99,192,245,.25); border-radius: var(--radius); padding: 20px 24px; margin-top: 40px; display: flex; align-items: flex-start; gap: 14px; }
+    .notice-box i { color: #63c0f5; font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+    .notice-box p { font-size: 0.88rem; color: rgba(255,255,255,.75); line-height: 1.6; }
+    .notice-box strong { color: var(--white); }
+
+    /* ── FAQ ──────────────────────────────────────────────────── */
+    .faq { background: var(--white); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .faq-item { border: 1px solid var(--mid-gray); border-radius: var(--radius-lg); overflow: hidden; }
+    .faq-question {
+      width: 100%; background: none; border: none; text-align: left; cursor: pointer;
+      padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--navy);
+      transition: background .2s;
+    }
+    .faq-question:hover { background: var(--blue-light); }
+    .faq-question[aria-expanded="true"] { background: var(--blue-light); color: var(--blue); }
+    .faq-question i { color: var(--blue); font-size: 0.8rem; transition: transform .3s; flex-shrink: 0; }
+    .faq-question[aria-expanded="true"] i { transform: rotate(180deg); }
+    .faq-answer { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; }
+    .faq-answer.open { max-height: 300px; padding: 0 24px 20px; }
+    .faq-answer p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ── BEFORE/AFTER ────────────────────────────────────────── */
+    .before-after { background: var(--white); }
+    .ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .ba-card { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--mid-gray); }
+    .ba-images { display: grid; grid-template-columns: 1fr 1fr; }
+    .ba-img-wrap { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--light-gray); }
+    .ba-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ba-label { position: absolute; top: 8px; left: 8px; background: rgba(13,33,69,.85); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing:.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; }
+    .ba-placeholder { width: 100%; aspect-ratio: 4/3; background: var(--light-gray); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: var(--text-muted); font-size: 0.75rem; }
+    .ba-placeholder i { font-size: 1.6rem; color: var(--mid-gray); }
+    .ba-info { padding: 14px 16px; background: var(--off-white); }
+    .ba-treatment { font-size: 0.72rem; font-weight: 700; letter-spacing:.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 3px; }
+    .ba-note { font-size: 0.82rem; color: var(--text-muted); }
+    .ba-consent-note { background: var(--blue-light); border-left: 4px solid var(--blue); border-radius: var(--radius); padding: 14px 18px; margin-top: 28px; font-size: 0.82rem; color: var(--text-muted); }
+    .ba-consent-note strong { color: var(--navy); }
+    @media (max-width: 768px) { .ba-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 1024px) { .ba-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* ── VIDEO SECTION ───────────────────────────────────────── */
+    .video-section { background: var(--navy); padding: 80px 0; }
+    .video-section .section-headline { color: var(--white); }
+    .video-section .section-sub { color: rgba(255,255,255,.70); }
+    .video-wrap { position: relative; width: 100%; max-width: 760px; margin: 40px auto 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.4); aspect-ratio: 16/9; background: #000; }
+    .video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; background: linear-gradient(135deg,#0d2145,#1B75BB); cursor: pointer; }
+    .video-play-btn { width: 72px; height: 72px; background: rgba(255,255,255,.15); border: 3px solid rgba(255,255,255,.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: #fff; transition: background .2s, transform .2s; }
+    .video-placeholder:hover .video-play-btn { background: var(--blue); transform: scale(1.08); }
+    .video-placeholder-text { color: rgba(255,255,255,.75); font-size: 0.9rem; font-weight: 500; text-align: center; }
+
+    /* ── COMPARISON TABLE ───────────────────────────────────── */
+    .comparison { background: var(--off-white); }
+    .compare-table-wrap { overflow-x: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow); border: 1px solid var(--mid-gray); }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 600px; }
+    .compare-table thead th { background: var(--navy); color: #fff; padding: 16px 20px; text-align: left; font-size: 0.78rem; font-weight: 700; letter-spacing:.08em; text-transform: uppercase; }
+    .compare-table tbody tr { border-bottom: 1px solid var(--light-gray); }
+    .compare-table tbody tr:last-child { border-bottom: none; }
+    .compare-table tbody tr:nth-child(even) { background: var(--off-white); }
+    .compare-table tbody tr:nth-child(odd) { background: var(--white); }
+    .compare-table td { padding: 14px 20px; color: var(--text-muted); vertical-align: top; line-height: 1.5; }
+    .compare-table td:first-child { font-weight: 600; color: var(--navy); white-space: nowrap; }
+    .compare-table .chk { color: #1a7a4a; }
+    .compare-table .x { color: #c0392b; }
+
+    /* ── CONTACT FORM ────────────────────────────────────────── */
+    .contact-form-section { background: var(--navy); padding: 80px 0; }
+    .contact-form-section .section-headline { color: var(--white); }
+    .contact-form-section .section-sub { color: rgba(255,255,255,.70); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; margin-top: 48px; }
+    .form-trust-list { display: flex; flex-direction: column; gap: 20px; }
+    .form-trust-item { display: flex; align-items: flex-start; gap: 14px; }
+    .form-trust-icon { width: 44px; height: 44px; background: rgba(255,255,255,.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #63c0f5; font-size: 1.1rem; flex-shrink: 0; }
+    .form-trust-text strong { display: block; color: #fff; font-size: 0.95rem; font-weight: 600; margin-bottom: 3px; }
+    .form-trust-text span { color: rgba(255,255,255,.60); font-size: 0.85rem; line-height: 1.5; }
+    .contact-form-card { background: var(--white); border-radius: var(--radius-lg); padding: 36px 32px; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+    .contact-form-card h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .contact-form-card .form-sub { font-size: 0.84rem; color: var(--text-muted); margin-bottom: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .form-row.full { grid-template-columns: 1fr; }
+    .form-field { display: flex; flex-direction: column; gap: 5px; }
+    .form-field label { font-size: 0.74rem; font-weight: 700; color: var(--text-muted); letter-spacing:.05em; text-transform: uppercase; }
+    .form-field label .req { color: #c0392b; margin-left: 2px; }
+    .form-field input, .form-field select, .form-field textarea {
+      font-family: 'Inter', sans-serif; font-size: 0.92rem; color: var(--text);
+      border: 1.5px solid var(--mid-gray); border-radius: 8px; padding: 11px 14px;
+      background: var(--off-white); transition: border-color .2s, box-shadow .2s;
+      width: 100%; box-sizing: border-box; min-height: 44px;
+    }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+      outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27,117,187,.15); background: #fff;
+    }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #aab; }
+    .form-field textarea { resize: vertical; min-height: 90px; }
+    .form-consent { font-size: 0.74rem; color: var(--text-muted); line-height: 1.55; margin: 14px 0 18px; }
+    .form-consent a { color: var(--blue); text-decoration: underline; }
+    .btn-submit { width: 100%; background: var(--blue); color: #fff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1rem; padding: 15px 24px; border: none; border-radius: 50px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: background .2s, transform .15s; min-height: 52px; }
+    .btn-submit:hover { background: var(--blue-mid); transform: translateY(-1px); }
+    .btn-submit:focus-visible { outline: 3px solid #63c0f5; outline-offset: 3px; }
+    .form-success { display: none; text-align: center; padding: 32px 20px; }
+    .form-success i { font-size: 2.8rem; color: #1a7a4a; margin-bottom: 14px; display: block; }
+    .form-success h4 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .form-success p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+    /* Sticky header shrink */
+    .site-header { transition: padding .3s, box-shadow .3s; }
+    .site-header.header-shrunk .nav-inner { padding-top: 8px; padding-bottom: 8px; }
+    .site-header.header-shrunk .logo-img { height: 34px; }
+    @media (max-width: 768px) {
+      .form-grid { grid-template-columns: 1fr; gap: 28px; }
+      .contact-form-card { padding: 24px 18px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ── HOURS & CONTACT ──────────────────────────────────────── */
+    .contact { background: var(--off-white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .contact-card { background: var(--white); border-radius: var(--radius-lg); padding: 36px 32px; box-shadow: var(--shadow); }
+    .contact-card-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 20px; }
+    .hours-table { width: 100%; border-collapse: collapse; }
+    .hours-table tr td { padding: 10px 0; border-bottom: 1px solid var(--light-gray); font-size: 0.92rem; }
+    .hours-table tr:last-child td { border-bottom: none; }
+    .hours-table .day { color: var(--text-muted); font-weight: 500; }
+    .hours-table .time { text-align: right; font-weight: 600; color: var(--navy); }
+    .hours-table .closed { text-align: right; font-weight: 600; color: #c0392b; }
+    .open-badge { display: inline-flex; align-items: center; gap: 6px; background: #e8f8f0; color: #1a7a4a; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 12px; border-radius: 50px; margin-bottom: 20px; }
+    .open-badge span { width: 6px; height: 6px; border-radius: 50%; background: #1a7a4a; }
+    .contact-info-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .contact-info-list li { display: flex; align-items: flex-start; gap: 14px; }
+    .ci-icon { width: 38px; height: 38px; flex-shrink: 0; background: var(--blue-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; color: var(--blue); font-size: 0.95rem; }
+    .ci-label { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+    .ci-value { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-top: 2px; }
+    .ci-value a { color: var(--blue); }
+    .ci-value a:hover { text-decoration: underline; }
+
+    /* ── CTA BANNER ───────────────────────────────────────────── */
+    .cta-banner { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%); padding: 60px 0; text-align: center; }
+    .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .cta-banner p { color: rgba(255,255,255,.80); font-size: 1rem; margin-bottom: 28px; }
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-white { background: var(--white); color: var(--blue); font-weight: 700; font-size: 0.95rem; padding: 13px 28px; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px; transition: transform .15s, box-shadow .15s; }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    .btn-ghost-white { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.6); font-weight: 600; font-size: 0.95rem; padding: 12px 28px; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px; transition: all .2s; }
+    .btn-ghost-white:hover { border-color: var(--white); background: rgba(255,255,255,.12); }
+
+    /* ── TRUST BAR ────────────────────────────────────────────── */
+    .trust-bar { background: var(--light-gray); border-top: 1px solid var(--mid-gray); border-bottom: 1px solid var(--mid-gray); padding: 20px 0; }
+    .trust-bar-inner { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .tb-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; color: var(--navy); }
+    .tb-item i { color: var(--blue); font-size: 1rem; }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    .site-footer { background: var(--navy); padding: 48px 0 24px; color: rgba(255,255,255,.65); font-size: 0.85rem; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .footer-logo img { height: 38px; margin-bottom: 16px; }
+    .footer-desc { font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,.60); max-width: 320px; margin-bottom: 16px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 14px; }
+    .footer-links-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links-list a { color: rgba(255,255,255,.60); font-size: 0.88rem; transition: color .2s; }
+    .footer-links-list a:hover { color: var(--white); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { color: rgba(255,255,255,.4); font-size: 0.78rem; }
+    .footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-legal a { color: rgba(255,255,255,.4); font-size: 0.78rem; transition: color .2s; }
+    .footer-legal a:hover { color: rgba(255,255,255,.75); }
+    .footer-trust-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .ftb { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 6px; padding: 6px 12px; font-size: 0.75rem; color: rgba(255,255,255,.65); }
+    .ftb i { color: #63c0f5; }
+
+    /* ── MOBILE NAV TOGGLE ──────────────────────────────────────── */
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      flex-direction: column; gap: 5px; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px; transition: all .3s;
+    }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--white); flex-direction: column; gap: 0;
+        box-shadow: 0 8px 24px rgba(13,33,69,.15); padding: 8px 0; z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li a { display: block; padding: 12px 24px; font-size: 1rem; border-bottom: 1px solid var(--light-gray); }
+    }
+
+    /* ── INSURANCE ────────────────────────────────────────────── */
+    .insurance { background: var(--white); }
+    .ins-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+    .ins-card { background: var(--off-white); border: 1px solid var(--mid-gray); border-radius: var(--radius); padding: 18px 16px; text-align: center; transition: border-color .2s, box-shadow .2s; }
+    .ins-card:hover { border-color: var(--blue); box-shadow: var(--shadow); }
+    .ins-card i { font-size: 1.5rem; color: var(--blue); margin-bottom: 8px; display: block; }
+    .ins-card .ins-name { font-weight: 600; font-size: 0.88rem; color: var(--navy); margin-bottom: 3px; }
+    .ins-card .ins-note { font-size: 0.75rem; color: var(--text-muted); }
+    .ins-notice { background: var(--blue-light); border-left: 4px solid var(--blue); border-radius: var(--radius); padding: 16px 20px; margin-top: 28px; font-size: 0.9rem; color: var(--text-muted); }
+    .ins-notice strong { color: var(--navy); }
+    @media (max-width: 768px) { .ins-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .ins-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* ── GEO PROXIMITY ───────────────────────────────────────── */
+    .geo-proximity { background: var(--navy); padding: 48px 0; }
+    .geo-proximity .container { display: flex; flex-direction: column; gap: 20px; }
+    .geo-headline { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--white); text-align: center; margin-bottom: 8px; }
+    .geo-headline em { color: #63c0f5; font-style: italic; }
+    .geo-sub { color: rgba(255,255,255,.70); text-align: center; font-size: 0.95rem; max-width: 680px; margin: 0 auto 24px; line-height: 1.65; }
+    .geo-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .geo-tag { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.80); font-size: 0.8rem; font-weight: 500; padding: 7px 16px; border-radius: 50px; display: flex; align-items: center; gap: 7px; }
+    .geo-tag i { color: #63c0f5; font-size: 0.75rem; }
+
+    /* ── AUTHORITY BAR ────────────────────────────────────────── */
+    .authority-bar { background: var(--light-gray); border-top: 1px solid var(--mid-gray); border-bottom: 1px solid var(--mid-gray); padding: 22px 0; }
+    .auth-inner { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+    .auth-item { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; font-weight: 600; color: var(--navy); }
+    .auth-item i { color: var(--blue); font-size: 1.1rem; }
+    .auth-divider { color: var(--mid-gray); }
+
+    /* ── MAP EMBED ────────────────────────────────────────────── */
+    .map-embed { width: 100%; height: 280px; border-radius: var(--radius); overflow: hidden; margin-top: 20px; border: 1px solid var(--mid-gray); }
+    .map-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    /* ── GOOGLE REVIEWS SECTION ────────────────────────────────── */
+    .reviews-section { background: var(--off-white); }
+    .reviews-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+    .reviews-score-block { display: flex; align-items: center; gap: 24px; background: var(--white); border-radius: var(--radius-lg); padding: 28px 32px; box-shadow: var(--shadow); border: 1px solid var(--mid-gray); flex: 0 0 auto; }
+    .reviews-big-num { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 700; color: var(--navy); line-height: 1; }
+    .reviews-stars-row { display: flex; gap: 4px; margin: 6px 0 4px; }
+    .reviews-stars-row i { color: #f5a623; font-size: 1.2rem; }
+    .reviews-count { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
+    .reviews-platform { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 0.78rem; font-weight: 600; color: var(--text-muted); }
+    .reviews-cta-block { display: flex; flex-direction: column; gap: 12px; flex: 1; max-width: 340px; justify-content: center; }
+    .reviews-cta-block > p { font-size: 0.88rem; color: var(--text-muted); font-weight: 500; margin: 0; }
+    .btn-review { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.9rem; padding: 12px 22px; border-radius: 50px; transition: all .2s; white-space: nowrap; min-height: 44px; }
+    .btn-review-google { background: #fff; color: #1a73e8; border: 2px solid #1a73e8; }
+    .btn-review-google:hover { background: #1a73e8; color: #fff; }
+    .btn-review-yelp { background: #fff; color: #d32323; border: 2px solid #d32323; }
+    .btn-review-yelp:hover { background: #d32323; color: #fff; }
+    .btn-review-hg { background: #fff; color: #00a0af; border: 2px solid #00a0af; }
+    .btn-review-hg:hover { background: #00a0af; color: #fff; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .review-card { background: var(--white); border-radius: var(--radius-lg); padding: 28px 24px 22px; box-shadow: var(--shadow); border: 1px solid var(--mid-gray); display: flex; flex-direction: column; gap: 12px; position: relative; }
+    .review-card::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--blue-light); position: absolute; top: 4px; left: 18px; line-height: 1; pointer-events: none; }
+    .review-stars { display: flex; gap: 3px; }
+    .review-stars i { color: #f5a623; font-size: 0.9rem; }
+    .review-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; padding-top: 4px; }
+    .review-author { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--light-gray); }
+    .review-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .review-name { font-weight: 600; font-size: 0.88rem; color: var(--navy); }
+    .review-meta { font-size: 0.72rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+    .review-meta i { color: #1a73e8; }
+    .reviews-more-row { text-align: center; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--mid-gray); }
+    .reviews-more-row p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; }
+    @media (max-width: 1024px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+      .reviews-header-row { flex-direction: column; }
+      .reviews-score-block { width: 100%; box-sizing: border-box; }
+      .reviews-cta-block { max-width: 100%; flex-direction: row; flex-wrap: wrap; }
+    }
+
+    /* ── HERO STAR BADGE ─────────────────────────────────────────── */
+    .hero-star-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,166,35,.15); border: 1px solid rgba(245,166,35,.4);
+      border-radius: 50px; padding: 7px 16px; margin-bottom: 14px;
+      font-size: 0.82rem; font-weight: 600; color: #fbd87f;
+      transition: background .2s;
+    }
+    .hero-star-badge .stars { display: flex; gap: 2px; }
+    .hero-star-badge .stars i { font-size: 0.72rem; color: #f5a623; }
+    .hero-star-badge:hover { background: rgba(245,166,35,.25); }
+
+    /* ── FLOATING CTA ─────────────────────────────────────────── */
+    .float-cta { position: fixed; bottom: 24px; right: 24px; display: flex; flex-direction: column; gap: 10px; z-index: 200; }
+    .float-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--white); box-shadow: 0 4px 18px rgba(0,0,0,.25); transition: transform .2s; cursor: pointer; }
+    .float-btn:hover { transform: scale(1.1); }
+    .float-btn.phone { background: #1a7a4a; }
+    .float-btn.schedule { background: var(--blue); }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .team-grid { grid-template-columns: repeat(3, 1fr); }
+      .expect-steps { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .auth-inner { gap: 16px; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 48px 0; }
+      .hero { padding: 56px 0 48px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 28px; }
+      .hero-headline { font-size: 2rem; }
+      .hero-card { display: none; }
+      .hero-sub { font-size: 0.97rem; margin-bottom: 24px; }
+      .hero-actions { gap: 10px; }
+      .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .about-img-wrap { display: none; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .tx-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-card { padding: 24px 20px; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .risk-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-inner { flex-wrap: wrap; }
+      .stat-item { padding: 18px 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,.10); width: 50%; }
+      .section-headline { font-size: 1.75rem; }
+      .section-sub { font-size: 0.93rem; }
+      .nav-links { display: none; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .trust-bar-inner { gap: 14px; }
+      .tb-item { font-size: 0.78rem; }
+      /* Authority bar: 2 columns on tablet */
+      .auth-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: center; }
+      .auth-divider { display: none; }
+      .auth-item { justify-content: center; font-size: 0.78rem; }
+      /* EEAT bar: wrap neatly */
+      .eeat-bar { gap: 8px; padding: 14px 16px; }
+      .eeat-item { font-size: 0.78rem; }
+      .eeat-divider { display: none; }
+      /* GEO block */
+      .geo-headline { font-size: 1.25rem; }
+      .geo-sub { font-size: 0.88rem; }
+      /* Sticky bar spacing for mobile */
+      body { padding-bottom: 70px; }
+      .float-cta { display: none; } /* replaced by sticky bar */
+    }
+    @media (max-width: 480px) {
+      section { padding: 40px 0; }
+      .container { padding: 0 16px; }
+      .hero { padding: 44px 0 36px; }
+      .hero-headline { font-size: 1.65rem; line-height: 1.22; }
+      .hero-sub { font-size: 0.92rem; }
+      .hero-badge { font-size: 0.68rem; }
+      .hero-trust { gap: 12px; }
+      .trust-item { font-size: 0.75rem; }
+      .team-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .team-name { font-size: 0.88rem; }
+      .team-title { font-size: 0.72rem; }
+      .expect-steps { grid-template-columns: 1fr; gap: 14px; }
+      .stat-item { width: 100%; border-bottom: 1px solid rgba(255,255,255,.10); }
+      .risk-grid { grid-template-columns: 1fr 1fr; }
+      .nav-inner { padding: 12px 16px; }
+      .btn-primary span { display: none; }
+      .btn-primary { padding: 10px 16px; }
+      .section-headline { font-size: 1.5rem; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-desc { max-width: 100%; }
+      .ins-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .ins-card { padding: 14px 10px; }
+      .geo-tags { gap: 8px; }
+      .geo-tag { font-size: 0.72rem; padding: 5px 12px; }
+      .auth-inner { grid-template-columns: 1fr; }
+      .cta-banner h2 { font-size: 1.5rem; }
+      .cta-actions { flex-direction: column; align-items: stretch; }
+      .btn-white, .btn-ghost-white { justify-content: center; }
+      .faq-question { font-size: 0.88rem; padding: 16px 18px; }
+      .contact-card { padding: 20px 16px; }
+    }
+
+    /* ── PRINT STYLES ─────────────────────────────────────────── */
+    @media print {
+      .top-bar, .site-header, .hero, .stats-ribbon, .authority-bar,
+      .trust-bar, .conditions-edu, .team, .treatments, .expect,
+      .cta-banner, .geo-proximity, .insurance, .float-cta,
+      .sticky-call-bar, .site-footer { display: none; }
+      .faq, .contact { display: block; }
+      body { font-size: 11pt; color: #000; background: #fff; padding: 0; }
+      .contact-card { box-shadow: none; border: 1px solid #ccc; }
+      a[href^='tel']::after { content: ' (' attr(href) ')'; }
+    }
+
+    /* ── COST NOTE ──────────────────────────────────────────── */
+    .cost-note { background: var(--blue-light); border-left: 4px solid var(--blue); border-radius: var(--radius); padding: 16px 20px; margin-top: 16px; font-size: 0.9rem; color: var(--text-muted); }
+    .cost-note strong { color: var(--navy); }
+
+    /* ── STICKY MOBILE CALL BAR ───────────────────────────────── */
+    .sticky-call-bar {
+      display: none; /* shown only on mobile via media query */
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+      height: 60px;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.18);
+    }
+    .sticky-call-bar a {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; font-weight: 700; font-size: 0.95rem;
+      color: var(--white); text-decoration: none;
+      min-height: 60px; transition: filter .15s;
+    }
+    .sticky-call-bar a:hover { filter: brightness(1.1); }
+    .sticky-call-bar .scb-call { background: #1a7a4a; }
+    .sticky-call-bar .scb-schedule { background: var(--blue); }
+    .sticky-call-bar i { font-size: 1rem; }
+    @media (max-width: 768px) {
+      .sticky-call-bar { display: grid; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- SKIP NAVIGATION (Accessibility) -->
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <!-- TOP BAR ─ TEMPLATE: Update phone number, hours text, and address -->
+  <div class="top-bar" role="banner">
+    <div class="container">
+      <div class="top-bar-inner">
+        <span>
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="streetAddress">197 14th St NW, Ste 300</span> &middot;
+            <span itemprop="addressLocality">CITY_NAME</span>,
+            <span itemprop="addressRegion">GA</span>
+            <span itemprop="postalCode">30318</span>
+          </span>
+        </span>
+        <span>
+          <i class="fas fa-clock" aria-hidden="true"></i>Mon – Thu &nbsp;|&nbsp;
+          <i class="fas fa-phone" aria-hidden="true"></i>
+          <a href="tel:4046090870" itemprop="telephone">404.609.0870</a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER ─ TEMPLATE: Update logo src/alt, nav links, phone number -->
+  <header class="site-header" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="CITY_NAME Medical Clinic — Home">
+        <img src="https://igoejeff.github.io/atlantamedicalvein/images/amc-logo.png"
+             alt="CITY_NAME Medical Clinic logo" class="logo-img"
+             width="160" height="42" itemprop="logo" />
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Primary Navigation">
+        <button class="hamburger" aria-expanded="false" aria-controls="main-nav-list" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#insurance">Insurance</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="tel:4046090870" class="btn-phone" aria-label="Call CITY_NAME Medical Clinic">
+          <i class="fas fa-phone" aria-hidden="true"></i> 404.609.0870
+        </a>
+        <a href="tel:4046090870" class="btn-primary">
+          <i class="fas fa-phone" aria-hidden="true"></i> <span>Free Consultation</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="index.html" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name" aria-current="page">Vein Treatment</span>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" role="main">
+
+    <!-- HERO ─ TEMPLATE: Update headline, subtext, trust bullets, hero card stats -->
+    <section class="hero" aria-label="Hero — Vein Treatment in CITY_NAME">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <!-- Hero star badge — TEMPLATE: Replace href with real Google write-review URL (see Reviews section comment for how-to) -->
+            <a href="https://search.google.com/local/writereview?placeid=ChIJ_REPLACE_WITH_REAL_PLACE_ID" target="_blank" rel="noopener noreferrer" class="hero-star-badge" aria-label="4.7 stars on Google — view 300+ patient reviews">
+              <span class="stars" aria-hidden="true">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </span>
+              <span>4.7 / 5 &nbsp;&middot;&nbsp; 300+ Google Reviews</span>
+              <i class="fas fa-external-link-alt" style="font-size:.65rem;opacity:.7;" aria-hidden="true"></i>
+            </a>
+            <div class="hero-badge" role="note">
+              <i class="fas fa-circle" style="font-size:.5rem;" aria-hidden="true"></i>
+              Midtown CITY_NAME · Board-Certified Vein Specialists
+            </div>
+            <h1 class="hero-headline">
+              Varicose Vein &amp;<br /><em>Spider Vein Treatment</em><br />in CITY_NAME, GA
+            </h1>
+            <p class="hero-sub">
+              CITY_NAME Medical Clinic provides minimally invasive, in-office treatment for varicose veins and spider veins at 197 14th St NW, Suite 300 in Midtown CITY_NAME. Procedures take 5–15 minutes. No hospital. No general anesthesia.
+            </p>
+            <div class="hero-actions">
+              <a href="tel:4046090870" class="btn-primary"><i class="fas fa-phone" aria-hidden="true"></i> Schedule Free Consultation</a>
+              <a href="tel:4046090870" class="btn-outline"><i class="fas fa-phone" aria-hidden="true"></i> 404.609.0870</a>
+            </div>
+            <div class="hero-trust" role="list">
+              <div class="trust-item" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i> In-Office Procedures</div>
+              <div class="trust-item" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i> 5–15 Minute Treatments</div>
+              <div class="trust-item" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i> Most Insurance Accepted</div>
+            </div>
+          </div>
+          <div class="hero-right" aria-hidden="true">
+            <div class="hero-card">
+              <div class="hero-card-title"><i class="fas fa-stethoscope"></i> &nbsp;Clinical Overview</div>
+              <div class="hc-stat">
+                <div class="hc-icon"><i class="fas fa-user-md"></i></div>
+                <div><div class="hc-label">Providers</div><div class="hc-value">3 Vein Specialists · 2 Vascular Technologists</div></div>
+              </div>
+              <div class="hc-stat">
+                <div class="hc-icon"><i class="fas fa-stopwatch"></i></div>
+                <div><div class="hc-label">Typical Procedure Time</div><div class="hc-value">5–15 Minutes</div></div>
+              </div>
+              <div class="hc-stat">
+                <div class="hc-icon"><i class="fas fa-walking"></i></div>
+                <div><div class="hc-label">Downtime</div><div class="hc-value">Minimal — Walk In, Walk Out</div></div>
+              </div>
+              <div class="hc-stat">
+                <div class="hc-icon"><i class="fas fa-shield-alt"></i></div>
+                <div><div class="hc-label">Insurance</div><div class="hc-value">Most Major Plans Accepted</div></div>
+              </div>
+              <div class="hc-stat">
+                <div class="hc-icon"><i class="fas fa-calendar-check"></i></div>
+                <div><div class="hc-label">Clinic Hours</div><div class="hc-value">Monday – Thursday Only</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS RIBBON -->
+    <div class="stats-ribbon" role="region" aria-label="At a Glance Statistics">
+      <div class="container">
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-value"><span class="stat-num">3</span></div>
+            <div class="stat-label">In-Office Procedures</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value"><span class="stat-num">5</span></div>
+            <div class="stat-label">Dedicated Specialists</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value"><span class="stat-num">15</span><span class="stat-suffix">min</span></div>
+            <div class="stat-label">Max Procedure Time</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value"><span class="stat-num">4</span></div>
+            <div class="stat-label">Days a Week Open</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTHORITY BAR -->
+    <div class="authority-bar" role="region" aria-label="Clinical Authority & Credentials">
+      <div class="container">
+        <div class="auth-inner">
+          <div class="auth-item"><i class="fas fa-stethoscope" aria-hidden="true"></i> Vein-Exclusive Practice</div>
+          <span class="auth-divider" aria-hidden="true">|</span>
+          <div class="auth-item"><i class="fas fa-award" aria-hidden="true"></i> Board-Certified Physicians</div>
+          <span class="auth-divider" aria-hidden="true">|</span>
+          <div class="auth-item"><i class="fas fa-wave-square" aria-hidden="true"></i> RVS & RVT Credentialed Sonographers</div>
+          <span class="auth-divider" aria-hidden="true">|</span>
+          <div class="auth-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> HIPAA Compliant</div>
+          <span class="auth-divider" aria-hidden="true">|</span>
+          <div class="auth-item"><i class="fas fa-star" aria-hidden="true"></i> 4.7 ★ Google Rating (300+ Reviews)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar" role="region" aria-label="Trust Indicators">
+      <div class="container">
+        <div class="trust-bar-inner">
+          <div class="tb-item"><i class="fas fa-award" aria-hidden="true"></i> Board-Certified Vein Specialists</div>
+          <div class="tb-item"><i class="fas fa-microscope" aria-hidden="true"></i> On-Site Venous Ultrasound</div>
+          <div class="tb-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> Most Insurance Accepted</div>
+          <div class="tb-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Midtown CITY_NAME</div>
+          <div class="tb-item"><i class="fas fa-bolt" aria-hidden="true"></i> Same-Day for Cash-Pay</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT ─ TEMPLATE: Update clinic description, address, bullet points, service area -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img-wrap">
+            <img src="https://igoejeff.github.io/atlantamedicalvein/images/treatment-room.jpg"
+                 alt="CITY_NAME Medical Clinic vein treatment room at 197 14th St NW Midtown CITY_NAME"
+                 loading="lazy" width="600" height="450" />
+          </div>
+          <div class="about-content">
+            <div class="section-tag"><i class="fas fa-hospital" aria-hidden="true"></i> About the Clinic</div>
+            <h2 class="section-headline" id="about-heading">
+              A Dedicated <em>Vein Treatment</em> Practice in Midtown CITY_NAME
+            </h2>
+            <p class="section-sub">
+              CITY_NAME Medical Clinic is located at 197 14th St NW, Suite 300, CITY_NAME, GA 30318 — in the heart of Midtown CITY_NAME near the STREET_CORRIDOR, accessible from NEARBY_HIGHWAYS_SHORT. We treat varicose veins and spider veins exclusively, using minimally invasive in-office procedures. Every procedure is performed or directly supervised by a board-certified vein specialist.
+            </p>
+            <div class="about-points">
+              <div class="about-point">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <div class="about-point-text">
+                  <strong>Venous Duplex Ultrasound Screening</strong>
+                  <span>Diagnostic ultrasound is performed on-site to map vein anatomy before any treatment is planned. Ultrasound screening is a billable clinical service and is not complimentary.</span>
+                </div>
+              </div>
+              <div class="about-point">
+                <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+                <div class="about-point-text">
+                  <strong>Personalized Treatment Plan</strong>
+                  <span>Each patient receives a custom treatment plan based on ultrasound findings, clinical presentation, symptom severity, and insurance coverage.</span>
+                </div>
+              </div>
+              <div class="about-point">
+                <i class="fas fa-bolt" aria-hidden="true"></i>
+                <div class="about-point-text">
+                  <strong>Same-Day Procedures for Cash-Pay Patients</strong>
+                  <span>Cash-pay patients may be treated the same day as their evaluation. All insurance-covered procedures require prior authorization before scheduling.</span>
+                </div>
+              </div>
+              <div class="about-point">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <div class="about-point-text">
+                  <strong>Serving Greater CITY_NAME</strong>
+                  <span>Patients travel from Buckhead, Sandy Springs, Decatur, Marietta, Alpharetta, and throughout metro CITY_NAME for treatment.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONDITIONS EDUCATION (E-E-A-T + Topical Authority) -->
+    <section class="conditions-edu" id="conditions" aria-labelledby="conditions-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag"><i class="fas fa-book-medical" aria-hidden="true"></i> Understanding Vein Disease</div>
+          <h2 class="section-headline" id="conditions-heading">What Are <em>Varicose Veins</em> and <em>Spider Veins?</em></h2>
+          <p class="section-sub">Clinical information to help patients understand their condition before their first visit.</p>
+        </div>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <h3>Varicose Veins</h3>
+            <p>Varicose veins are enlarged, twisted veins that appear predominantly in the legs and feet. They develop when the one-way valves inside veins weaken or fail, allowing blood to pool and causing the vein wall to stretch and bulge. Varicose veins are a clinical manifestation of chronic venous insufficiency (CVI).</p>
+            <p><strong>Common symptoms include:</strong></p>
+            <ul>
+              <li><i class="fas fa-circle" style="font-size:.45rem;margin-top:7px;" aria-hidden="true"></i> Aching, heaviness, or fatigue in the legs</li>
+              <li><i class="fas fa-circle" style="font-size:.45rem;margin-top:7px;" aria-hidden="true"></i> Visible bulging, rope-like veins beneath the skin</li>
+              <li><i class="fas fa-circle" style="font-size:.45rem;margin-top:7px;" aria-hidden="true"></i> Swelling in the lower legs and ankles</li>
+              <li><i class="fas fa-circle" style="font-size:.45rem;margin-top:7px;" aria-hidden="true"></i> Skin discoloration or thickening near the ankle</li>
+              <li><i class="fas fa-circle" style="font-size:.45rem;margin-top:7px;" aria-hidden="true"></i> Cramping or restless legs, especially at night</li>
+            </ul>
+          </div>
+          <div class="edu-card">
+            <h3>Spider Veins</h3>
+            <p>Spider veins (telangiectasias) are small, dilated blood vessels visible near the surface of the skin, typically appearing as red, blue, or purple web-like patterns. Unlike varicose veins, they do not bulge and are generally smaller. They commonly appear on the legs and face.</p>
+            <p><strong>Spider veins may indicate:</strong></p>
+            <ul>
+              <li><i class="fas fa-circle" style="font-size:.45rem;margin-top:7px;" aria-hidden="true"></i> Underlying venous insufficiency feeding the surface veins</li>
+              <li><i class="fas fa-circle" style="font-size:.45rem;margin-top:7px;" aria-hidden="true"></i> Hormonal changes (pregnancy, birth control, menopause)</li>
+              <li><i class="fas fa-circle" style="font-size:.45rem;margin-top:7px;" aria-hidden="true"></i> Prolonged standing or sedentary work</li>
+              <li><i class="fas fa-circle" style="font-size:.45rem;margin-top:7px;" aria-hidden="true"></i> Genetic predisposition to vein weakness</li>
+              <li><i class="fas fa-circle" style="font-size:.45rem;margin-top:7px;" aria-hidden="true"></i> Sun exposure (facial spider veins)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="risk-grid" role="list" aria-label="Risk Factors for Vein Disease">
+          <div class="risk-item" role="listitem">
+            <i class="fas fa-dna" aria-hidden="true"></i>
+            <span>Family History</span>
+          </div>
+          <div class="risk-item" role="listitem">
+            <i class="fas fa-birthday-cake" aria-hidden="true"></i>
+            <span>Age 30+</span>
+          </div>
+          <div class="risk-item" role="listitem">
+            <i class="fas fa-venus" aria-hidden="true"></i>
+            <span>Female Sex / Hormonal Changes</span>
+          </div>
+          <div class="risk-item" role="listitem">
+            <i class="fas fa-weight" aria-hidden="true"></i>
+            <span>Obesity / Excess Weight</span>
+          </div>
+          <div class="risk-item" role="listitem">
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
+            <span>Prolonged Standing or Sitting</span>
+          </div>
+          <div class="risk-item" role="listitem">
+            <i class="fas fa-baby" aria-hidden="true"></i>
+            <span>Pregnancy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM ─ TEMPLATE: Update names, credentials, titles, photo URLs, initials for each provider -->
+    <section class="team" id="team" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag"><i class="fas fa-user-md" aria-hidden="true"></i> Our Vein Specialists</div>
+          <h2 class="section-headline" id="team-heading">Meet the <em>Clinical Team</em></h2>
+          <p class="section-sub">All vein procedures are performed or directly supervised by our credentialed specialists. Our team includes board-certified physicians, certified physician assistants, and registered vascular technologists.</p>
+        </div>
+        <div class="team-grid" role="list">
+
+          <!-- PROVIDER_1_LAST -->
+          <article class="team-card" role="listitem"
+            itemscope itemtype="https://schema.org/Person"
+            itemprop="employee">
+            <div class="team-photo-wrap">
+              <img src="PROVIDER_1_PHOTO_URL"
+                   alt="PROVIDER_1_NAME — Vein Specialist at CITY_NAME Medical Clinic"
+                   class="team-photo" loading="lazy" width="300" height="300"
+                   itemprop="image"
+                   onerror="this.parentNode.innerHTML='<div class=\'team-photo-placeholder\'><div class=\'initials\'>AH</div></div>'" />
+            </div>
+            <div class="team-info">
+              <div class="team-name" itemprop="name">PROVIDER_1_LAST</div>
+              <div class="team-cred" itemprop="honorificSuffix">Vein Specialist</div>
+              <div class="team-title" itemprop="jobTitle">Vein Specialist — Physician</div>
+              <div class="team-role-badge">Physician</div>
+            </div>
+          </article>
+
+          <!-- PROVIDER_2_LAST -->
+          <article class="team-card" role="listitem"
+            itemscope itemtype="https://schema.org/Person"
+            itemprop="employee">
+            <div class="team-photo-wrap">
+              <img src="PROVIDER_2_PHOTO_URL"
+                   alt="PROVIDER_2_NAME DO — Vein Specialist at CITY_NAME Medical Clinic"
+                   class="team-photo" loading="lazy" width="300" height="300"
+                   itemprop="image"
+                   onerror="this.parentNode.innerHTML='<div class=\'team-photo-placeholder\'><div class=\'initials\'>JD</div></div>'" />
+            </div>
+            <div class="team-info">
+              <div class="team-name" itemprop="name">PROVIDER_2_LAST</div>
+              <div class="team-cred" itemprop="honorificSuffix">DO</div>
+              <div class="team-title" itemprop="jobTitle">Vein Specialist — Doctor of Osteopathy</div>
+              <div class="team-role-badge">Physician</div>
+            </div>
+          </article>
+
+          <!-- PROVIDER_3_NAME -->
+          <article class="team-card" role="listitem"
+            itemscope itemtype="https://schema.org/Person"
+            itemprop="employee">
+            <div class="team-photo-wrap">
+              <img src="PROVIDER_3_PHOTO_URL"
+                   alt="PROVIDER_3_NAME PA-C — Physician Assistant Vein Specialist at CITY_NAME Medical Clinic"
+                   class="team-photo" loading="lazy" width="300" height="300"
+                   itemprop="image"
+                   onerror="this.parentNode.innerHTML='<div class=\'team-photo-placeholder\'><div class=\'initials\'>LF</div></div>'" />
+            </div>
+            <div class="team-info">
+              <div class="team-name" itemprop="name">PROVIDER_3_NAME</div>
+              <div class="team-cred" itemprop="honorificSuffix">PA-C</div>
+              <div class="team-title" itemprop="jobTitle">Vein Specialist — Certified Physician Assistant</div>
+              <div class="team-role-badge">Physician Assistant</div>
+            </div>
+          </article>
+
+          <!-- PROVIDER_4_NAME -->
+          <article class="team-card" role="listitem"
+            itemscope itemtype="https://schema.org/Person"
+            itemprop="employee">
+            <div class="team-photo-wrap">
+              <img src="PROVIDER_4_PHOTO_URL"
+                   alt="PROVIDER_4_NAME RVS — Registered Vascular Sonographer at CITY_NAME Medical Clinic"
+                   class="team-photo" loading="lazy" width="300" height="300"
+                   itemprop="image"
+                   onerror="this.parentNode.innerHTML='<div class=\'team-photo-placeholder\'><div class=\'initials\'>OC</div></div>'" />
+            </div>
+            <div class="team-info">
+              <div class="team-name" itemprop="name">PROVIDER_4_NAME</div>
+              <div class="team-cred" itemprop="honorificSuffix">RVS</div>
+              <div class="team-title" itemprop="jobTitle">Registered Vascular Sonographer</div>
+              <div class="team-role-badge tech">Vascular Tech</div>
+            </div>
+          </article>
+
+          <!-- PROVIDER_5_NAME -->
+          <article class="team-card" role="listitem"
+            itemscope itemtype="https://schema.org/Person"
+            itemprop="employee">
+            <div class="team-photo-wrap">
+              <img src="PROVIDER_5_PHOTO_URL"
+                   alt="PROVIDER_5_NAME RVT RDMS — Registered Vascular Technician at CITY_NAME Medical Clinic"
+                   class="team-photo" loading="lazy" width="300" height="300"
+                   itemprop="image"
+                   onerror="this.parentNode.innerHTML='<div class=\'team-photo-placeholder\'><div class=\'initials\'>GL</div></div>'" />
+            </div>
+            <div class="team-info">
+              <div class="team-name" itemprop="name">PROVIDER_5_NAME</div>
+              <div class="team-cred" itemprop="honorificSuffix">RVT, RDMS</div>
+              <div class="team-title" itemprop="jobTitle">Registered Vascular Technician &amp; Diagnostic Medical Sonographer</div>
+              <div class="team-role-badge tech">Vascular Tech</div>
+            </div>
+          </article>
+
+        </div><!-- end team-grid -->
+
+        <!-- E-E-A-T Credential Bar -->
+        <div class="eeat-bar" role="region" aria-label="Team Credentials">
+          <div class="eeat-item"><i class="fas fa-award" aria-hidden="true"></i> Board-Certified Physicians on Staff</div>
+          <span class="eeat-divider" aria-hidden="true">|</span>
+          <div class="eeat-item"><i class="fas fa-stethoscope" aria-hidden="true"></i> Certified Physician Assistant (PA-C)</div>
+          <span class="eeat-divider" aria-hidden="true">|</span>
+          <div class="eeat-item"><i class="fas fa-wave-square" aria-hidden="true"></i> Registered Vascular Sonographer (RVS)</div>
+          <span class="eeat-divider" aria-hidden="true">|</span>
+          <div class="eeat-item"><i class="fas fa-microscope" aria-hidden="true"></i> RVT &amp; RDMS Credentialed Technologist</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INSURANCE ─ TEMPLATE: Update carrier names/notes and prior-auth notice -->
+    <section class="insurance" id="insurance" aria-labelledby="insurance-heading" lang="en">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag"><i class="fas fa-id-card" aria-hidden="true"></i> Insurance</div>
+          <h2 class="section-headline" id="insurance-heading">Most Major Insurance <em>Plans Accepted</em></h2>
+          <p class="section-sub">CITY_NAME Medical Clinic accepts most major commercial insurance plans, Medicare, and many others. All insurance-covered vein procedures require prior authorization before scheduling. Call us to verify your specific coverage.</p>
+        </div>
+        <div class="ins-grid" role="list" aria-label="Accepted Insurance Plans">
+          <div class="ins-card" role="listitem" itemscope itemtype="https://schema.org/MedicalOrganization">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <div class="ins-name">Blue Cross Blue Shield</div>
+            <div class="ins-note">BCBS of STATE_FULL &amp; National</div>
+          </div>
+          <div class="ins-card" role="listitem">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <div class="ins-name">Aetna</div>
+            <div class="ins-note">Commercial &amp; Medicare Advantage</div>
+          </div>
+          <div class="ins-card" role="listitem">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <div class="ins-name">Cigna</div>
+            <div class="ins-note">Commercial Plans</div>
+          </div>
+          <div class="ins-card" role="listitem">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <div class="ins-name">UnitedHealthcare</div>
+            <div class="ins-note">UHC Commercial &amp; Medicare</div>
+          </div>
+          <div class="ins-card" role="listitem">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <div class="ins-name">Humana</div>
+            <div class="ins-note">Commercial &amp; Medicare Advantage</div>
+          </div>
+          <div class="ins-card" role="listitem">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <div class="ins-name">Medicare</div>
+            <div class="ins-note">Part B (Traditional)</div>
+          </div>
+          <div class="ins-card" role="listitem">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <div class="ins-name">Anthem</div>
+            <div class="ins-note">Anthem Blue Cross / Blue Shield</div>
+          </div>
+          <div class="ins-card" role="listitem">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <div class="ins-name">And More…</div>
+            <div class="ins-note">Call to verify your plan</div>
+          </div>
+        </div>
+        <div class="ins-notice" role="note">
+          <strong><i class="fas fa-info-circle" aria-hidden="true"></i> Prior Authorization Required:</strong> All insurance-covered vein procedures at CITY_NAME Medical Clinic require prior authorization before scheduling. Our team will verify your benefits and manage the authorization process. <strong>Same-day procedures are available for cash-pay patients only.</strong> Call <a href="tel:4046090870" style="color:var(--blue);">404.609.0870</a> to confirm your coverage.
+        </div>
+        <div class="cost-note" role="note">
+          <strong><i class="fas fa-dollar-sign" aria-hidden="true"></i> Cost &amp; Pricing Transparency:</strong> Procedure costs vary based on treatment type, number of sessions, and insurance coverage. Symptomatic varicose vein procedures (ablation, Varithena®) are often covered by insurance when medically necessary. Spider vein sclerotherapy is typically cosmetic and self-pay. <strong>Cash-pay pricing available for all procedures.</strong> Call <a href="tel:4046090870" style="color:var(--blue);">404.609.0870</a> for a cost estimate before your visit.
+        </div>
+      </div>
+    </section>
+
+    <!-- TREATMENTS ─ TEMPLATE: Update procedure names, descriptions, detail bullets, Learn More links -->
+    <section class="treatments" id="treatments" aria-labelledby="treatments-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag"><i class="fas fa-heartbeat" aria-hidden="true"></i> Treatment Options</div>
+          <h2 class="section-headline" id="treatments-heading">Three <em>Clinically Proven</em> Procedures</h2>
+          <p class="section-sub">CITY_NAME Medical Clinic offers exactly three in-office vein procedures. The appropriate treatment is selected based on vein size, location, ultrasound findings, and clinical presentation. All procedures are minimally invasive, require no hospital admission, and take 5–15 minutes.</p>
+        </div>
+        <div class="tx-grid" role="list">
+
+          <!-- 01 Endovenous Ablation -->
+          <article class="tx-card" role="listitem"
+            itemscope itemtype="https://schema.org/MedicalProcedure">
+            <div class="tx-num">01 — Thermal / Energy Ablation</div>
+            <div class="tx-icon" aria-hidden="true"><i class="fas fa-fire-alt"></i></div>
+            <h3 class="tx-name" itemprop="name">Endovenous Ablation</h3>
+            <p class="tx-desc" itemprop="description">
+              Endovenous ablation is a minimally invasive thermal procedure for treating larger, symptomatic varicose veins. A thin catheter is inserted into the diseased vein under ultrasound guidance and local anesthesia. Heat energy is applied through the catheter to close the vein from the inside. No surgical incisions are required.
+            </p>
+            <div class="tx-details">
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> Performed under local anesthesia</div>
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> No surgical incisions, no general anesthesia</div>
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> Ultrasound-guided precision</div>
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> Walk out same day, minimal downtime</div>
+            </div>
+            <span class="tx-tag"><i class="fas fa-check" aria-hidden="true"></i> For Larger Varicose Veins</span>
+            <br />
+            <a href="services/venclose-rfa.html" class="tx-link" aria-label="Learn more about endovenous ablation at CITY_NAME Medical Clinic">
+              Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <!-- 02 Varithena -->
+          <article class="tx-card" role="listitem"
+            itemscope itemtype="https://schema.org/MedicalProcedure">
+            <div class="tx-num">02 — FDA-Approved Foam Sclerotherapy</div>
+            <div class="tx-icon" aria-hidden="true"><i class="fas fa-flask"></i></div>
+            <h3 class="tx-name" itemprop="name">Varithena® Microfoam</h3>
+            <p class="tx-desc" itemprop="description">
+              Varithena® (polidocanol injectable foam) is an FDA-approved microfoam sclerotherapy agent used to treat incompetent saphenous veins and suitable varicose vein treatments. The microfoam displaces blood within the vein and causes the vessel wall to collapse and be reabsorbed by the body over time.
+            </p>
+            <div class="tx-details">
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> FDA-approved polidocanol microfoam</div>
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> No general anesthesia required</div>
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> Treats saphenous vein system</div>
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> Compression stockings worn post-procedure</div>
+            </div>
+            <span class="tx-tag"><i class="fas fa-check" aria-hidden="true"></i> FDA-Approved Microfoam</span>
+            <br />
+            <a href="services/varithena.html" class="tx-link" aria-label="Learn more about Varithena microfoam treatment at CITY_NAME Medical Clinic">
+              Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <!-- 03 Sclerotherapy -->
+          <article class="tx-card" role="listitem"
+            itemscope itemtype="https://schema.org/MedicalProcedure">
+            <div class="tx-num">03 — Liquid Injection</div>
+            <div class="tx-icon" aria-hidden="true"><i class="fas fa-syringe"></i></div>
+            <h3 class="tx-name" itemprop="name">Sclerotherapy</h3>
+            <p class="tx-desc" itemprop="description">
+              Sclerotherapy is the gold-standard in-office treatment for spider veins and small varicosities. A sclerosant solution is injected directly into the target vessel using a fine needle. The chemical irritates the vessel wall, causing it to seal shut and gradually fade. No anesthesia required.
+            </p>
+            <div class="tx-details">
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> Gold-standard spider vein treatment</div>
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> No anesthesia — fine needle injection only</div>
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> Treats spider veins and small varicosities</div>
+              <div class="tx-detail-item"><i class="fas fa-check" aria-hidden="true"></i> No downtime required</div>
+            </div>
+            <span class="tx-tag"><i class="fas fa-check" aria-hidden="true"></i> Spider Veins &amp; Small Varicosities</span>
+            <br />
+            <a href="services/sclerotherapy.html" class="tx-link" aria-label="Learn more about sclerotherapy at CITY_NAME Medical Clinic">
+              Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GEO PROXIMITY ─ TEMPLATE: Update city name, landmarks, I-highway refs, service area tags -->
+    <div class="geo-proximity" role="region" aria-label="Service Area and Location" lang="en">
+      <div class="container">
+        <h2 class="geo-headline">Serving <em>CITY_NAME & Surrounding Communities</em></h2>
+        <p class="geo-sub">
+          CITY_NAME Medical Clinic is located at <strong>197 14th St NW, Suite 300</strong> in Midtown CITY_NAME, STATE_FULL 30318 — near the 14th Street Connector, accessible from NEARBY_HIGHWAYS_FULL. We are minutes from STATE_FULL Tech, Piedmont Park, Atlantic Station, and Downtown CITY_NAME. Patients regularly travel from across the metro area for minimally invasive vein treatment.
+        </p>
+        <div class="geo-tags" role="list" aria-label="Areas Served">
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Midtown CITY_NAME</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Buckhead</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sandy Springs</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Decatur</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Marietta</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Alpharetta</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Smyrna</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Dunwoody</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Roswell</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Johns Creek</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kennesaw</div>
+          <div class="geo-tag" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Metro CITY_NAME, GA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT TO EXPECT -->
+    <section class="expect" id="expect" aria-labelledby="expect-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag" style="background:rgba(99,192,245,.15);color:#a8d8f5;"><i class="fas fa-list-ol" aria-hidden="true"></i> What to Expect</div>
+          <h2 class="section-headline" id="expect-heading">Fast, In-Office. <em>Minimal Downtime.</em></h2>
+          <p class="section-sub" style="color:rgba(255,255,255,.70);">Every patient visit follows a clear four-step process. No hospital stays. No overnight recovery.</p>
+        </div>
+        <div class="expect-steps" role="list">
+          <div class="expect-step" role="listitem">
+            <div class="step-num" aria-label="Step 1">1</div>
+            <h3 class="step-title">Consultation &amp; Venous Ultrasound</h3>
+            <p class="step-desc">Your first visit includes a clinical consultation and a venous duplex ultrasound to map your veins and identify diseased vessels. Ultrasound is a billable diagnostic service — not complimentary. Results guide your treatment plan.</p>
+          </div>
+          <div class="expect-step" role="listitem">
+            <div class="step-num" aria-label="Step 2">2</div>
+            <h3 class="step-title">Personalized Treatment Plan</h3>
+            <p class="step-desc">Based on ultrasound findings and clinical evaluation, your specialist creates a custom treatment plan. Insurance patients begin the prior authorization process. Cash-pay patients may be treated same day.</p>
+          </div>
+          <div class="expect-step" role="listitem">
+            <div class="step-num" aria-label="Step 3">3</div>
+            <h3 class="step-title">In-Office Procedure (5–15 min)</h3>
+            <p class="step-desc">Procedures are performed entirely in-office — no hospital, no general anesthesia. Most take 5–15 minutes. The appropriate procedure (ablation, Varithena®, or sclerotherapy) is used based on your individualized plan.</p>
+          </div>
+          <div class="expect-step" role="listitem">
+            <div class="step-num" aria-label="Step 4">4</div>
+            <h3 class="step-title">Walk Out &amp; Resume Activity</h3>
+            <p class="step-desc">Most patients walk out immediately after their procedure. Downtime is minimal. Specific post-procedure instructions are provided at the time of your visit by your treating specialist.</p>
+          </div>
+        </div>
+        <div class="notice-box" role="note">
+          <i class="fas fa-info-circle" aria-hidden="true"></i>
+          <p><strong>Insurance Patients:</strong> All insurance-covered procedures require prior authorization before scheduling. Our team manages the authorization process. <strong>Same-day procedures are available for cash-pay patients only.</strong> Call <a href="tel:4046090870" style="color:#63c0f5;">404.609.0870</a> to discuss your options.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ─ TEMPLATE: Update all Q&As to match client's specific services and common questions -->
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag"><i class="fas fa-question-circle" aria-hidden="true"></i> Frequently Asked Questions</div>
+          <h2 class="section-headline" id="faq-heading">Common Questions About <em>Vein Treatment</em></h2>
+          <p class="section-sub">Straightforward answers to the questions patients ask most before their first visit.</p>
+        </div>
+        <div class="faq-grid" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+              What vein treatments does CITY_NAME Medical Clinic offer?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-1" role="region">
+              <p>CITY_NAME Medical Clinic offers three minimally invasive, in-office procedures: <strong>endovenous ablation</strong> (thermal procedure for larger varicose veins), <strong>Varithena® microfoam</strong> (FDA-approved injectable foam for suitable varicose vein treatments), and <strong>sclerotherapy</strong> (liquid injection for spider veins and small varicosities).</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+              How long does a vein procedure take?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-2" role="region">
+              <p>Most vein procedures at CITY_NAME Medical Clinic take between <strong>5 and 15 minutes</strong> and are performed entirely in-office. Patients typically walk in and walk out the same day. No hospital admission or overnight stay is required.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+              Does insurance cover vein treatment?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-3" role="region">
+              <p>CITY_NAME Medical Clinic accepts most major insurance plans. However, <strong>all insurance-covered procedures require prior authorization</strong> before they can be scheduled. Same-day procedures are available for cash-pay patients only. Our team will verify your benefits and manage the authorization process.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+              Is the ultrasound screening free?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-4" role="region">
+              <p>No. Venous duplex ultrasound at CITY_NAME Medical Clinic is a diagnostic medical service and is <strong>not complimentary</strong>. It is billed to insurance or paid directly. The ultrasound maps your vein anatomy and is required before any treatment plan is created.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+              What are your clinic hours?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-5" role="region">
+              <p>CITY_NAME Medical Clinic is open <strong>Monday through Thursday only</strong>. The clinic is closed Friday, Saturday, and Sunday. Office is located at 197 14th St NW, Suite 300, CITY_NAME, GA 30318. Call <a href="tel:4046090870">404.609.0870</a> to schedule.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+              What is endovenous ablation?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-6" role="region">
+              <p>Endovenous ablation is a thermal procedure that uses energy delivered through a thin catheter to close diseased varicose veins from the inside. It is performed under <strong>local anesthesia</strong>, requires no surgical incisions, and takes 5–15 minutes in-office. It is used for larger, symptomatic varicose veins.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
+              What is Varithena® and how does it differ from sclerotherapy?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-7" role="region">
+              <p>Varithena® is an <strong>FDA-approved injectable microfoam</strong> (polidocanol) designed to treat incompetent saphenous veins and larger varicosities. The microfoam fills and treats larger venous segments. Standard liquid sclerotherapy uses a chemical solution injected with a fine needle and is used for spider veins and smaller surface varicosities.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
+              Who are the vein specialists at CITY_NAME Medical Clinic?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-8" role="region">
+              <p>The vein team includes: <strong>PROVIDER_1_LAST</strong> (Vein Specialist), <strong>PROVIDER_2_LAST, DO</strong> (Vein Specialist), <strong>PROVIDER_3_NAME, PA-C</strong> (Physician Assistant — Vein Specialist), <strong>PROVIDER_4_NAME, RVS</strong> (Registered Vascular Sonographer), and <strong>PROVIDER_5_NAME, RVT, RDMS</strong> (Registered Vascular Technician &amp; Diagnostic Medical Sonographer).</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-9">
+              Where is CITY_NAME Medical Clinic located?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-9" role="region">
+              <p>CITY_NAME Medical Clinic is located at <strong>197 14th St NW, Suite 300, CITY_NAME, GA 30318</strong>, in Midtown CITY_NAME near the STREET_CORRIDOR. Accessible from NEARBY_HIGHWAYS_SHORT. Patients travel from Buckhead, Sandy Springs, Decatur, Marietta, Alpharetta, and throughout metro CITY_NAME for treatment.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-10">
+              Can varicose veins come back after treatment?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-10" role="region">
+              <p>Treated veins do not return after successful closure. However, <strong>new varicose veins can develop</strong> over time due to underlying venous insufficiency, genetics, lifestyle, or hormonal factors. Regular follow-up and ultrasound monitoring can identify new disease early. Your specialist will discuss long-term management at your visit.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-11">
+              What insurance plans does CITY_NAME Medical Clinic accept?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-11" role="region">
+              <p>CITY_NAME Medical Clinic accepts most major insurance plans including <strong>Blue Cross Blue Shield, Aetna, Cigna, UnitedHealthcare, Humana, Anthem,</strong> and <strong>Medicare</strong>. All insurance-covered procedures require prior authorization before scheduling. Call <a href="tel:4046090870">404.609.0870</a> to verify your specific plan and benefits.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-12">
+              Am I a candidate for vein treatment?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-12" role="region">
+              <p>Most adults with symptomatic varicose veins or spider veins are candidates for minimally invasive treatment. A clinical consultation and venous duplex ultrasound at CITY_NAME Medical Clinic will determine the right approach for your condition. Common symptoms that indicate candidacy include <strong>leg aching, heaviness, visible bulging veins, swelling, skin discoloration near the ankle,</strong> or restless legs at night.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-13">
+              Is vein treatment painful?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-13" role="region">
+              <p>Most patients report minimal discomfort during in-office vein procedures. <strong>Endovenous ablation</strong> is performed under local anesthesia, so the treated area is numb. Sclerotherapy and Varithena® involve small needle injections. Mild soreness or bruising may occur after treatment and typically resolves within a few days.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-14">
+              What is the recovery time after vein treatment?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-14" role="region">
+              <p>Recovery is minimal for all three in-office procedures. Most patients <strong>walk out immediately</strong> after treatment and resume normal daily activities the same day. Compression stockings are typically recommended after ablation and Varithena®. Your specialist will provide specific post-procedure instructions at the time of your visit.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 16: Cost / Pricing -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-16">
+              How much does vein treatment cost?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-16" role="region">
+              <p>Costs vary based on procedure type and insurance coverage. <strong>Symptomatic varicose vein procedures</strong> (ablation, Varithena®) are often covered by insurance when medically necessary with prior authorization. <strong>Spider vein sclerotherapy</strong> is typically cosmetic and self-pay. Cash-pay pricing is available for all procedures — call <a href="tel:4046090870">404.609.0870</a> for a personalized estimate.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 17: Referral -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-17">
+              Do I need a referral to see a vein specialist?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-17" role="region">
+              <p>Most patients <strong>do not need a referral</strong> to schedule a consultation at CITY_NAME Medical Clinic. However, your insurance plan may require one for covered procedures. Our team verifies your specific insurance requirements when you call. Schedule by calling <a href="tel:4046090870">404.609.0870</a> Monday through Thursday.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 18: Sessions -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-18">
+              How many treatment sessions will I need?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-18" role="region">
+              <p>The number of sessions depends on your condition. Larger varicose veins may need <strong>1–2 sessions per vein segment</strong> with ablation or Varithena®. Spider veins typically require <strong>multiple sclerotherapy sessions</strong> spaced 4–6 weeks apart. Your specialist will outline a realistic treatment plan at your consultation.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 15: GEO -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-15">
+              Does CITY_NAME Medical Clinic treat patients near Buckhead or Sandy Springs?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-15" role="region">
+              <p>Yes. CITY_NAME Medical Clinic at <strong>197 14th St NW, Suite 300, CITY_NAME, GA 30318</strong> is centrally located in Midtown CITY_NAME and easily accessible from Buckhead, Sandy Springs, Decatur, Marietta, Alpharetta, Dunwoody, Smyrna, and throughout the metro CITY_NAME area via NEARBY_HIGHWAYS_FULL.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS ─ TEMPLATE: Replace review text, author names, dates, and all platform URLs with client data -->
+    <section class="reviews-section" id="reviews" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag"><i class="fas fa-star" aria-hidden="true"></i> Patient Reviews</div>
+          <h2 class="section-headline" id="reviews-heading">What Patients Say About <em>CITY_NAME Medical Clinic</em></h2>
+          <p class="section-sub">Verified reviews from real patients on Google, Yelp, and Healthgrades. Read them where they live &mdash; unedited.</p>
+        </div>
+
+        <div class="reviews-header-row">
+          <div class="reviews-score-block" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <div>
+              <div class="reviews-big-num"><span itemprop="ratingValue">4.7</span></div>
+              <div class="reviews-stars-row" aria-label="4.7 out of 5 stars">
+                <i class="fas fa-star" aria-hidden="true"></i>
+                <i class="fas fa-star" aria-hidden="true"></i>
+                <i class="fas fa-star" aria-hidden="true"></i>
+                <i class="fas fa-star" aria-hidden="true"></i>
+                <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+              </div>
+              <div class="reviews-count"><span itemprop="reviewCount">300</span>+ verified patient reviews<meta itemprop="bestRating" content="5" /></div>
+              <div class="reviews-platform">
+                <svg width="16" height="16" viewBox="0 0 48 48" aria-label="Google" role="img" focusable="false"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.2l6.7-6.7C35.7 2.3 30.2 0 24 0 14.6 0 6.6 5.4 2.6 13.3l7.8 6C12.2 13.1 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17z"/><path fill="#FBBC05" d="M10.4 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.8-6A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.7l7.8-6z"/><path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2 1.4-4.6 2.2-7.7 2.2-6.4 0-11.8-4.3-13.7-10l-7.8 6C6.6 42.6 14.6 48 24 48z"/></svg>
+                Google Reviews
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-cta-block">
+            <p>Had a great experience? Help other patients find us:</p>
+            <!-- TEMPLATE: Replace href with your real Google Write-Review link.
+               HOW TO FIND IT:
+               1. Go to Google Maps → search your clinic name
+               2. Click on your GBP listing → Share → Copy link
+               3. BEST: use https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
+               4. Find Place ID at: developers.google.com/maps/documentation/javascript/examples/places-placeid-finder
+               The direct write-review link generates 3× more reviews than a Maps profile link -->
+            <a href="https://search.google.com/local/writereview?placeid=ChIJ_REPLACE_WITH_REAL_PLACE_ID" target="_blank" rel="noopener noreferrer" class="btn-review btn-review-google" aria-label="Leave a Google review for CITY_NAME Medical Clinic">
+              <svg width="16" height="16" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.2l6.7-6.7C35.7 2.3 30.2 0 24 0 14.6 0 6.6 5.4 2.6 13.3l7.8 6C12.2 13.1 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17z"/><path fill="#FBBC05" d="M10.4 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.8-6A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.7l7.8-6z"/><path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2 1.4-4.6 2.2-7.7 2.2-6.4 0-11.8-4.3-13.7-10l-7.8 6C6.6 42.6 14.6 48 24 48z"/></svg>
+              &#9733;&nbsp; Leave a Google Review
+            </a>
+            <a href="https://www.yelp.com/biz/atlanta-medical-clinic-atlanta-4" target="_blank" rel="noopener noreferrer" class="btn-review btn-review-yelp" aria-label="View CITY_NAME Medical Clinic on Yelp">
+              <i class="fab fa-yelp" aria-hidden="true"></i> View on Yelp
+            </a>
+            <a href="https://www.healthgrades.com/group-directory/ga-georgia/atlanta/atlanta-medical-clinic" target="_blank" rel="noopener noreferrer" class="btn-review btn-review-hg" aria-label="View CITY_NAME Medical Clinic on Healthgrades">
+              <i class="fas fa-stethoscope" aria-hidden="true"></i> Healthgrades
+            </a>
+          </div>
+        </div>
+
+        <div class="reviews-grid" role="list" aria-label="Patient Reviews">
+
+          <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="review-text" itemprop="reviewBody">&ldquo;PROVIDER_1_LAST and the team were exceptional. My varicose vein procedure took less than 15 minutes and I walked out feeling great. The entire process from ultrasound to treatment was professional and efficient. I can&rsquo;t recommend this clinic enough.&rdquo;</p>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">ST</div>
+              <div>
+                <div class="review-name" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">REVIEWER_1_NAME</span></div>
+                <div class="review-meta"><i class="fab fa-google" aria-hidden="true"></i> Google &nbsp;&middot;&nbsp; Verified Patient &nbsp;&middot;&nbsp; <time itemprop="datePublished" datetime="2025-09-15">Sep 2025</time></div>
+              </div>
+            </div>
+            <meta itemprop="reviewRating" content="5" />
+          </article>
+
+          <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="review-text" itemprop="reviewBody">&ldquo;The sclerotherapy procedure was quick and painless. Staff explained everything clearly. The same-day cash-pay option made the experience incredibly smooth. Highly recommend for anyone dealing with spider veins in CITY_NAME.&rdquo;</p>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">RM</div>
+              <div>
+                <div class="review-name" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">REVIEWER_2_NAME</span></div>
+                <div class="review-meta"><i class="fab fa-google" aria-hidden="true"></i> Google &nbsp;&middot;&nbsp; Verified Patient &nbsp;&middot;&nbsp; <time itemprop="datePublished" datetime="2025-10-22">Oct 2025</time></div>
+              </div>
+            </div>
+            <meta itemprop="reviewRating" content="5" />
+          </article>
+
+          <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="review-text" itemprop="reviewBody">&ldquo;The Varithena treatment was straightforward and effective. Greg and Ovi were thorough with the ultrasound and made sure I understood my plan before anything was done. Professional, clean office &mdash; results speak for themselves.&rdquo;</p>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">LV</div>
+              <div>
+                <div class="review-name" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">REVIEWER_3_NAME</span></div>
+                <div class="review-meta"><i class="fab fa-google" aria-hidden="true"></i> Google &nbsp;&middot;&nbsp; Verified Patient &nbsp;&middot;&nbsp; <time itemprop="datePublished" datetime="2025-11-08">Nov 2025</time></div>
+              </div>
+            </div>
+            <meta itemprop="reviewRating" content="5" />
+          </article>
+
+        </div>
+
+        <div class="reviews-more-row">
+          <p>Read all 300+ patient reviews &mdash; or share your own experience to help others find us.</p>
+          <!-- TEMPLATE: Replace href with client's real Google Maps listing URL -->
+          <a href="https://www.google.com/maps/place/CITY_NAME+Medical+Clinic/@33.7838,-84.3902,17z" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex;" aria-label="Read all Google reviews for CITY_NAME Medical Clinic">
+            <i class="fab fa-google" aria-hidden="true"></i> Read All Google Reviews
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BEFORE/AFTER ─ TEMPLATE: Replace placeholder divs with real patient photos (with signed HIPAA consent) -->
+    <section class="before-after" id="results" aria-labelledby="ba-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag"><i class="fas fa-images" aria-hidden="true"></i> Patient Results</div>
+          <h2 class="section-headline" id="ba-heading">Before &amp; After <em>Treatment Results</em></h2>
+          <p class="section-sub">Representative outcomes from in-office vein procedures at CITY_NAME Medical Clinic. Individual results vary.</p>
+        </div>
+        <div class="ba-grid">
+          <div class="ba-card">
+            <div class="ba-images">
+              <div class="ba-img-wrap">
+                <img src="https://igoejeff.github.io/atlantamedicalvein/images/ba-photo-1.jpg" alt="Before sclerotherapy — spider vein treatment at CITY_NAME Medical Clinic" loading="lazy" width="300" height="225" />
+                <span class="ba-label">Before</span>
+              </div>
+              <div class="ba-img-wrap">
+                <div class="ba-placeholder"><i class="fas fa-camera" aria-hidden="true"></i><span>After Photo</span></div>
+                <span class="ba-label">After</span>
+              </div>
+            </div>
+            <div class="ba-info">
+              <div class="ba-treatment">Sclerotherapy</div>
+              <div class="ba-note">Spider vein reduction &mdash; lower leg. Results at 6 weeks.</div>
+            </div>
+          </div>
+          <div class="ba-card">
+            <div class="ba-images">
+              <div class="ba-img-wrap">
+                <img src="https://igoejeff.github.io/atlantamedicalvein/images/ba-photo-2.jpg" alt="Before endovenous ablation — varicose vein treatment at CITY_NAME Medical Clinic" loading="lazy" width="300" height="225" />
+                <span class="ba-label">Before</span>
+              </div>
+              <div class="ba-img-wrap">
+                <div class="ba-placeholder"><i class="fas fa-camera" aria-hidden="true"></i><span>After Photo</span></div>
+                <span class="ba-label">After</span>
+              </div>
+            </div>
+            <div class="ba-info">
+              <div class="ba-treatment">Endovenous Ablation</div>
+              <div class="ba-note">Varicose vein closure &mdash; great saphenous vein. Results at 8 weeks.</div>
+            </div>
+          </div>
+          <div class="ba-card">
+            <div class="ba-images">
+              <div class="ba-img-wrap">
+                <img src="https://igoejeff.github.io/atlantamedicalvein/images/ba-photo-3.jpg" alt="Before Varithena treatment at CITY_NAME Medical Clinic" loading="lazy" width="300" height="225" />
+                <span class="ba-label">Before</span>
+              </div>
+              <div class="ba-img-wrap">
+                <div class="ba-placeholder"><i class="fas fa-camera" aria-hidden="true"></i><span>After Photo</span></div>
+                <span class="ba-label">After</span>
+              </div>
+            </div>
+            <div class="ba-info">
+              <div class="ba-treatment">Varithena&reg;</div>
+              <div class="ba-note">Saphenous vein foam treatment. Results at 10 weeks.</div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-consent-note" role="note">
+          <strong><i class="fas fa-shield-alt" aria-hidden="true"></i> HIPAA &amp; Patient Privacy:</strong> All photos are displayed with written patient consent and in full compliance with HIPAA privacy regulations. Photos are representative of individual patient outcomes. Individual results will vary based on condition severity, vein size, and treatment response.
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO ─ TEMPLATE: Replace YouTube src with real clinic video embed URL -->
+    <section class="video-section" id="video" aria-labelledby="video-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag" style="background:rgba(99,192,245,.15);color:#a8d8f5;"><i class="fas fa-play-circle" aria-hidden="true"></i> Watch &amp; Learn</div>
+          <h2 class="section-headline" id="video-heading">See What to <em>Expect at Your Visit</em></h2>
+          <p class="section-sub">A brief overview of the in-office vein treatment experience at CITY_NAME Medical Clinic.</p>
+        </div>
+        <div class="video-wrap" role="region" aria-label="Clinic overview video">
+          <!-- TEMPLATE: Replace this placeholder with a real YouTube/Vimeo embed -->
+          <!-- Example: <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="..." allowfullscreen></iframe> -->
+          <div class="video-placeholder" role="img" aria-label="Video placeholder — add clinic video">
+            <div class="video-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+            <div class="video-placeholder-text">Add your clinic&rsquo;s video here<br /><small style="opacity:.6;">YouTube or Vimeo embed recommended</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE ─ TEMPLATE: Adjust rows/columns for client's specific conditions & procedures -->
+    <section class="comparison" id="compare" aria-labelledby="compare-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag"><i class="fas fa-table" aria-hidden="true"></i> Treatment Comparison</div>
+          <h2 class="section-headline" id="compare-heading">Which Treatment <em>Is Right for You?</em></h2>
+          <p class="section-sub">Not all vein conditions are the same. Here is how the three in-office procedures at CITY_NAME Medical Clinic compare.</p>
+        </div>
+        <div class="compare-table-wrap">
+          <table class="compare-table" aria-label="Vein treatment comparison: Endovenous Ablation vs Varithena vs Sclerotherapy">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Endovenous Ablation</th>
+                <th scope="col">Varithena&reg;</th>
+                <th scope="col">Sclerotherapy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Best For</td><td>Large varicose veins, symptomatic GSV reflux</td><td>Saphenous vein insufficiency, medium varicosities</td><td>Spider veins, reticular veins, small varicosities</td></tr>
+              <tr><td>Anesthesia</td><td>Local anesthesia required</td><td>None required</td><td>None required</td></tr>
+              <tr><td>FDA Approved</td><td><i class="fas fa-check-circle chk" aria-label="Yes"></i></td><td><i class="fas fa-check-circle chk" aria-label="Yes"></i></td><td><i class="fas fa-check-circle chk" aria-label="Yes"></i></td></tr>
+              <tr><td>Procedure Time</td><td>5&ndash;15 minutes</td><td>5&ndash;15 minutes</td><td>5&ndash;15 minutes</td></tr>
+              <tr><td>In-Office</td><td><i class="fas fa-check-circle chk" aria-label="Yes"></i></td><td><i class="fas fa-check-circle chk" aria-label="Yes"></i></td><td><i class="fas fa-check-circle chk" aria-label="Yes"></i></td></tr>
+              <tr><td>Ultrasound Guided</td><td><i class="fas fa-check-circle chk" aria-label="Yes"></i></td><td><i class="fas fa-check-circle chk" aria-label="Yes"></i></td><td>Optional</td></tr>
+              <tr><td>Compression After</td><td>Recommended</td><td>Required</td><td>Recommended</td></tr>
+              <tr><td>Downtime</td><td>Minimal &mdash; walk same day</td><td>Minimal &mdash; walk same day</td><td>None</td></tr>
+              <tr><td>Insurance Coverage</td><td>Often covered (prior auth)</td><td>Often covered (prior auth)</td><td>Usually cosmetic</td></tr>
+              <tr><td>Results Visible</td><td>4&ndash;8 weeks</td><td>4&ndash;8 weeks</td><td>3&ndash;6 weeks</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM ─ TEMPLATE: Update form action/endpoint, insurance options, days, and phone number -->
+    <section class="contact-form-section" id="schedule" aria-labelledby="form-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag" style="background:rgba(99,192,245,.15);color:#a8d8f5;"><i class="fas fa-phone" aria-hidden="true"></i> Schedule a Free Consultation</div>
+          <h2 class="section-headline" id="form-heading">Schedule Your <em>Free Consultation</em></h2>
+          <p class="section-sub">Fill out the form below and our team will call you within one business day to schedule your free consultation.</p>
+        </div>
+        <div class="form-grid">
+
+          <!-- Trust signals beside the form -->
+          <div class="form-trust-list" aria-label="Why choose CITY_NAME Medical Clinic">
+            <div class="form-trust-item">
+              <div class="form-trust-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+              <div class="form-trust-text">
+                <strong>Prefer to Call?</strong>
+                <span>Reach us directly at <a href="tel:4046090870" style="color:#63c0f5;">404.609.0870</a><br />Monday &ndash; Thursday only.</span>
+              </div>
+            </div>
+            <div class="form-trust-item">
+              <div class="form-trust-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+              <div class="form-trust-text">
+                <strong>Same-Day for Cash-Pay</strong>
+                <span>No prior authorization wait. Cash-pay patients may be seen the same day as their evaluation.</span>
+              </div>
+            </div>
+            <div class="form-trust-item">
+              <div class="form-trust-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+              <div class="form-trust-text">
+                <strong>Insurance Handled for You</strong>
+                <span>Our team manages prior authorization for all major insurance plans. We verify your benefits before scheduling.</span>
+              </div>
+            </div>
+            <div class="form-trust-item">
+              <div class="form-trust-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
+              <div class="form-trust-text">
+                <strong>HIPAA Compliant &amp; Private</strong>
+                <span>All information submitted through this form is encrypted and handled in full compliance with HIPAA privacy regulations.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- The form itself -->
+          <div class="contact-form-card">
+            <h3>Schedule Your Free Consultation</h3>
+            <p class="form-sub">Fields marked <span style="color:#c0392b;">*</span> are required. We call you back within one business day.</p>
+
+            <form id="appointment-form" novalidate aria-label="Appointment request form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="f-first">First Name <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="f-first" name="first_name" placeholder="Jane" required autocomplete="given-name" />
+                </div>
+                <div class="form-field">
+                  <label for="f-last">Last Name <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="f-last" name="last_name" placeholder="Smith" required autocomplete="family-name" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                  <input type="tel" id="f-phone" name="phone" placeholder="(404) 555-0100" required autocomplete="tel" />
+                </div>
+                <div class="form-field">
+                  <label for="f-email">Email</label>
+                  <input type="email" id="f-email" name="email" placeholder="jane@email.com" autocomplete="email" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <!-- TEMPLATE: Update days to match client's open days -->
+                  <label for="f-day">Preferred Day <span class="req" aria-hidden="true">*</span></label>
+                  <select id="f-day" name="preferred_day" required>
+                    <option value="" disabled selected>Select a day</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <!-- TEMPLATE: Update insurance options for client's accepted plans -->
+                  <label for="f-insurance">Insurance</label>
+                  <select id="f-insurance" name="insurance">
+                    <option value="" disabled selected>Select plan</option>
+                    <option value="bcbs">Blue Cross Blue Shield</option>
+                    <option value="aetna">Aetna</option>
+                    <option value="cigna">Cigna</option>
+                    <option value="uhc">UnitedHealthcare</option>
+                    <option value="humana">Humana</option>
+                    <option value="medicare">Medicare</option>
+                    <option value="anthem">Anthem</option>
+                    <option value="cash">Self-Pay / Cash</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row full">
+                <div class="form-field">
+                  <label for="f-concern">Primary Concern</label>
+                  <select id="f-concern" name="concern">
+                    <option value="" disabled selected>What brings you in?</option>
+                    <option value="varicose">Varicose Veins</option>
+                    <option value="spider">Spider Veins</option>
+                    <option value="both">Both Varicose &amp; Spider Veins</option>
+                    <option value="pain">Leg Pain / Heaviness</option>
+                    <option value="swelling">Leg Swelling</option>
+                    <option value="unsure">Not Sure &mdash; Need Evaluation</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row full">
+                <div class="form-field">
+                  <label for="f-message">Additional Notes</label>
+                  <textarea id="f-message" name="message" placeholder="Any symptoms, questions, or other information you&rsquo;d like us to know before your visit..."></textarea>
+                </div>
+              </div>
+              <!-- TEMPLATE: Update privacy policy and terms links -->
+              <p class="form-consent">By submitting this form you agree to our <a href="#" target="_blank">Privacy Policy</a> and consent to being contacted by CITY_NAME Medical Clinic regarding your inquiry. This form is HIPAA compliant. We will never sell or share your information.</p>
+              <!-- TEMPLATE: Connect to Formspree, EmailJS, or your preferred form handler in the JS below -->
+              <button type="submit" class="btn-submit">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i> Request My Free Consultation
+              </button>
+            </form>
+
+            <div class="form-success" id="form-success" aria-live="polite">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <h4>Request Received!</h4>
+              <p>Thank you. A member of our team will call you within one business day to schedule your free consultation.<br /><br />If you need to speak with us sooner, call <a href="tel:4046090870" style="color:var(--blue);">404.609.0870</a> Monday &ndash; Thursday.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class="cta-banner" aria-label="Call to Action — Schedule Free Consultation">
+      <div class="container">
+        <h2>Ready for a Free Consultation?</h2>
+        <p>Call us Monday through Thursday at 197 14th St NW, Suite 300, Midtown CITY_NAME. No charge to discuss your options.</p>
+        <div class="cta-actions">
+          <a href="tel:4046090870" class="btn-white"><i class="fas fa-phone" aria-hidden="true"></i> Call 404.609.0870</a>
+          <a href="tel:4046090870" class="btn-ghost-white"><i class="fas fa-phone" aria-hidden="true"></i> Schedule Free Consultation</a>
+          <!-- TEMPLATE: Replace href with real Google write-review URL (see Reviews section comment for how-to) -->
+          <a href="https://search.google.com/local/writereview?placeid=ChIJ_REPLACE_WITH_REAL_PLACE_ID" target="_blank" rel="noopener noreferrer" class="btn-ghost-white" style="border-color:rgba(245,166,35,.7);" aria-label="Leave a Google review for CITY_NAME Medical Clinic">
+            <i class="fas fa-star" style="color:#f5a623;" aria-hidden="true"></i> Leave Us a Review
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOURS & CONTACT ─ TEMPLATE: Update hours table, address, phone, email, Google Maps embed URL -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <div class="section-tag"><i class="fas fa-clock" aria-hidden="true"></i> Hours &amp; Contact</div>
+          <h2 class="section-headline" id="contact-heading">Visit <em>Our Midtown CITY_NAME Office</em></h2>
+        </div>
+        <div class="contact-grid">
+
+          <div class="contact-card">
+            <div class="contact-card-title"><i class="fas fa-clock" aria-hidden="true"></i> &nbsp;Office Hours</div>
+            <div class="open-badge"><span aria-hidden="true"></span> Open Mon – Thu</div>
+            <table class="hours-table" aria-label="Office Hours">
+              <tbody>
+                <tr><td class="day">Monday</td><td class="time">Open</td></tr>
+                <tr><td class="day">Tuesday</td><td class="time">Open</td></tr>
+                <tr><td class="day">Wednesday</td><td class="time">Open</td></tr>
+                <tr><td class="day">Thursday</td><td class="time">Open</td></tr>
+                <tr><td class="day">Friday</td><td class="closed">Closed</td></tr>
+                <tr><td class="day">Saturday</td><td class="closed">Closed</td></tr>
+                <tr><td class="day">Sunday</td><td class="closed">Closed</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-title"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> &nbsp;Contact Information</div>
+            <div class="map-embed" aria-label="Google Maps — CITY_NAME Medical Clinic at 197 14th St NW CITY_NAME GA">
+              <iframe
+                src="GOOGLE_MAPS_EMBED_URL"
+                title="CITY_NAME Medical Clinic location map — 197 14th St NW Suite 300 CITY_NAME GA 30318"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <ul class="contact-info-list" style="margin-top:20px;">
+              <li>
+                <div class="ci-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                <div>
+                  <div class="ci-label">Address</div>
+                  <div class="ci-value">197 14th St NW, Suite 300<br />CITY_NAME, GA 30318<br /><small style="font-size:.8rem;color:var(--text-muted);">Midtown CITY_NAME · NEARBY_HIGHWAYS</small></div>
+                </div>
+              </li>
+              <li>
+                <div class="ci-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+                <div>
+                  <div class="ci-label">Phone</div>
+                  <div class="ci-value"><a href="tel:4046090870">404.609.0870</a></div>
+                </div>
+              </li>
+              <li>
+                <div class="ci-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                <div>
+                  <div class="ci-label">Email</div>
+                  <div class="ci-value"><a href="mailto:info@atlantamedicalclinic.com">info@atlantamedicalclinic.com</a></div>
+                </div>
+              </li>
+              <li>
+                <div class="ci-icon"><i class="fas fa-map" aria-hidden="true"></i></div>
+                <div>
+                  <div class="ci-label">Directions</div>
+                  <div class="ci-value"><a href="https://maps.google.com/?q=MAPS_QUERY" target="_blank" rel="noopener noreferrer">Get Directions <i class="fas fa-external-link-alt" style="font-size:.75rem;" aria-hidden="true"></i></a></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- end #main-content -->
+
+  <!-- FOOTER ─ TEMPLATE: Update logo, description, treatment links, contact details, social URLs -->
+  <footer class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
+    <div class="container">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="https://igoejeff.github.io/atlantamedicalvein/images/amc-logo.png"
+                 alt="CITY_NAME Medical Clinic — Vein Treatment Specialists"
+                 width="160" height="38" />
+          </div>
+          <p class="footer-desc">
+            CITY_NAME Medical Clinic is a dedicated vein treatment practice located at 197 14th St NW, Suite 300, CITY_NAME, GA 30318. We provide minimally invasive treatment for varicose veins and spider veins using endovenous ablation, Varithena®, and sclerotherapy. Open Monday – Thursday.
+          </p>
+          <div class="footer-trust-badges">
+            <div class="ftb"><i class="fas fa-shield-alt" aria-hidden="true"></i> HIPAA Compliant</div>
+            <div class="ftb"><i class="fas fa-award" aria-hidden="true"></i> Board-Certified Physicians</div>
+            <div class="ftb"><i class="fas fa-lock" aria-hidden="true"></i> Secure &amp; Private</div>
+            <!-- TEMPLATE: Replace href with real Google write-review URL -->
+            <a href="https://search.google.com/local/writereview?placeid=ChIJ_REPLACE_WITH_REAL_PLACE_ID" target="_blank" rel="noopener noreferrer" class="ftb" style="text-decoration:none;cursor:pointer;" aria-label="4.7 stars on Google — view 300+ patient reviews">
+              <i class="fas fa-star" style="color:#f5a623;" aria-hidden="true"></i>
+              4.7 &#9733; Google &middot; 300+ Reviews
+            </a>
+          </div>
+          <!-- Social Links (E-E-A-T / entity footprint) -->
+          <div style="display:flex;gap:12px;margin-top:16px;">
+            <a href="https://www.facebook.com/atlantamedicalclinic" target="_blank" rel="noopener noreferrer" aria-label="CITY_NAME Medical Clinic on Facebook" style="color:rgba(255,255,255,.55);font-size:1.1rem;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/atlantamedicalclinic" target="_blank" rel="noopener noreferrer" aria-label="CITY_NAME Medical Clinic on Instagram" style="color:rgba(255,255,255,.55);font-size:1.1rem;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.google.com/maps/place/CITY_NAME+Medical+Clinic/@33.7838,-84.3902,17z" target="_blank" rel="noopener noreferrer" aria-label="CITY_NAME Medical Clinic on Google — 4.7 stars" style="color:rgba(255,255,255,.55);font-size:1.1rem;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><i class="fab fa-google" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Treatments</div>
+          <ul class="footer-links-list">
+            <li><a href="services/varicose-vein-treatment.html">Varicose Vein Treatment</a></li>
+            <li><a href="services/spider-vein-treatment.html">Spider Vein Treatment</a></li>
+            <li><a href="services/venclose-rfa.html">Endovenous Ablation (RFA)</a></li>
+            <li><a href="services/varithena.html">Varithena® Microfoam</a></li>
+            <li><a href="services/sclerotherapy.html">Sclerotherapy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About the Clinic</a></li>
+            <li><a href="#team">Our Specialists</a></li>
+            <li><a href="team-page.html">Full Team Page</a></li>
+            <li><a href="#insurance">Insurance</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="blog.html">Blog &amp; Resources</a></li>
+            <li><a href="#reviews">Patient Reviews</a></li>
+            <li><a href="tel:4046090870">Free Consultation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links-list">
+            <li style="color:rgba(255,255,255,.60);font-size:.88rem;"><i class="fas fa-map-marker-alt" style="color:#63c0f5;margin-right:6px;"></i>197 14th St NW, Ste 300</li>
+            <li style="color:rgba(255,255,255,.60);font-size:.88rem;">CITY_NAME, GA 30318</li>
+            <li style="color:rgba(255,255,255,.60);font-size:.88rem;">Midtown CITY_NAME</li>
+            <li style="margin-top:8px;"><a href="tel:4046090870"><i class="fas fa-phone" style="color:#63c0f5;margin-right:6px;"></i>404.609.0870</a></li>
+            <li style="margin-top:4px;"><a href="mailto:info@atlantamedicalclinic.com"><i class="fas fa-envelope" style="color:#63c0f5;margin-right:6px;"></i>Email Us</a></li>
+            <li style="margin-top:8px;color:rgba(255,255,255,.60);font-size:.82rem;"><i class="fas fa-clock" style="color:#63c0f5;margin-right:6px;"></i>Mon – Thu Only</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 CITY_NAME Medical Clinic &middot; 197 14th St NW, Ste 300, CITY_NAME, GA 30318 &middot; All rights reserved.
+        </div>
+        <div class="footer-legal">
+          <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
+          <a href="#" aria-label="Terms of Use">Terms of Use</a>
+          <a href="#" aria-label="Accessibility Statement">Accessibility</a>
+          <a href="sitemap.xml" aria-label="Sitemap">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <div class="float-cta" role="complementary" aria-label="Quick Contact Buttons">
+    <a href="tel:4046090870" class="float-btn phone" aria-label="Call CITY_NAME Medical Clinic at 404.609.0870">
+      <i class="fas fa-phone" aria-hidden="true"></i>
+    </a>
+    <a href="tel:4046090870" class="float-btn schedule" aria-label="Call CITY_NAME Medical Clinic for a free consultation" title="Free Consultation">
+      <i class="fas fa-comment-medical" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <!-- STICKY MOBILE CALL BAR (mobile only — ≤768px) -->
+  <!-- TEMPLATE: Update phone number href and display text -->
+  <div class="sticky-call-bar" role="complementary" aria-label="Mobile Quick Contact">
+    <a href="tel:4046090870" class="scb-call" aria-label="Call CITY_NAME Medical Clinic at 404.609.0870">
+      <i class="fas fa-phone" aria-hidden="true"></i> Call Now
+    </a>
+    <a href="tel:4046090870" class="scb-schedule" aria-label="Call for a free consultation at CITY_NAME Medical Clinic">
+      <i class="fas fa-phone" aria-hidden="true"></i> Free Consult
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       JAVASCRIPT — FAQ Accordion + Mobile Nav + Active Nav Scroll
+       FAQ answers visible in raw HTML for crawlers/AI.
+       JS adds collapse behavior on top — graceful degradation.
+  ════════════════════════════════════════════════════════════════ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Hamburger menu
+      const hamburger = document.querySelector('.hamburger');
+      const navList = document.getElementById('main-nav-list');
+      if (hamburger && navList) {
+        hamburger.addEventListener('click', () => {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', String(!expanded));
+          navList.classList.toggle('open', !expanded);
+        });
+        // Close on nav link click
+        navList.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            hamburger.setAttribute('aria-expanded', 'false');
+            navList.classList.remove('open');
+          });
+        });
+      }
+
+      const allBtns = document.querySelectorAll('.faq-question');
+      const allAnswers = document.querySelectorAll('.faq-answer');
+
+      // Close all except the first (already open in HTML for crawlers)
+      allAnswers.forEach((ans, i) => { if (i !== 0) ans.classList.remove('open'); });
+      allBtns.forEach((btn, i) => { if (i !== 0) btn.setAttribute('aria-expanded', 'false'); });
+
+      // Accordion toggle
+      allBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          allBtns.forEach(b => {
+            b.setAttribute('aria-expanded', 'false');
+            document.getElementById(b.getAttribute('aria-controls')).classList.remove('open');
+          });
+          if (!expanded) {
+            btn.setAttribute('aria-expanded', 'true');
+            document.getElementById(btn.getAttribute('aria-controls')).classList.add('open');
+          }
+        });
+      });
+
+        // ── Sticky Header Shrink on Scroll ────────────────────────
+      const header = document.querySelector('.site-header');
+      if (header) {
+        window.addEventListener('scroll', () => {
+          header.classList.toggle('header-shrunk', window.scrollY > 80);
+        }, { passive: true });
+      }
+
+      // ── Form Submission Handler ──────────────────────────────
+      // TEMPLATE: Choose integration method A, B, or C below
+      const apptForm = document.getElementById('appointment-form');
+      const formSuccessDiv = document.getElementById('form-success');
+      if (apptForm && formSuccessDiv) {
+        apptForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const btn = apptForm.querySelector('.btn-submit');
+          const origHTML = btn.innerHTML;
+          // Client-side validation
+          let valid = true;
+          apptForm.querySelectorAll('[required]').forEach(field => {
+            if (!field.value.trim()) {
+              field.style.borderColor = '#c0392b';
+              field.setAttribute('aria-invalid', 'true');
+              valid = false;
+            } else {
+              field.style.borderColor = '';
+              field.removeAttribute('aria-invalid');
+            }
+          });
+          if (!valid) { apptForm.querySelector('[required]').focus(); return; }
+
+          btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          btn.disabled = true;
+
+          // ── OPTION A: Formspree (most common for static sites)
+          // Uncomment lines below and replace YOUR_FORM_ID:
+          // try {
+          //   const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+          //     method: 'POST',
+          //     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          //     body: JSON.stringify(Object.fromEntries(new FormData(apptForm)))
+          //   });
+          //   if (res.ok) { showSuccess(); } else { throw new Error('Server error'); }
+          // } catch(err) { showError(); return; }
+
+          // ── OPTION B: EmailJS
+          // import EmailJS SDK in <head>, then:
+          // emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', apptForm).then(showSuccess, showError);
+
+          // ── OPTION C: Netlify Forms
+          // Add `netlify` attribute to <form> tag — no JS needed.
+
+          // ── DEFAULT: Demo mode (simulates success)
+          await new Promise(r => setTimeout(r, 800));
+          showSuccess();
+
+          function showSuccess() {
+            apptForm.style.display = 'none';
+            formSuccessDiv.style.display = 'block';
+            formSuccessDiv.focus();
+          }
+          function showError() {
+            btn.innerHTML = origHTML;
+            btn.disabled = false;
+            alert('Sorry, there was a problem sending your request. Please call 404.609.0870 directly.');
+          }
+        });
+      }
+
+      // ── Active Nav Highlight on Scroll (IntersectionObserver) ────
+      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+      const sections = document.querySelectorAll('section[id], div[id]');
+      const observerOpts = { rootMargin: '-60px 0px -60% 0px', threshold: 0 };
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.remove('nav-active');
+              if (link.getAttribute('href') === '#' + entry.target.id) {
+                link.classList.add('nav-active');
+              }
+            });
+          }
+        });
+      }, observerOpts);
+      sections.forEach(sec => observer.observe(sec));
+
+    });
+  </script>
+
+</body>
+</html>
